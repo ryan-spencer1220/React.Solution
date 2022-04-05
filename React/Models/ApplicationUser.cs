@@ -2,11 +2,14 @@ using Microsoft.AspNetCore.Identity;
 
 namespace React.Models
 {
-    public class ApplicationUser : IdentityUser
+  public class ApplicationUser : IdentityUser
+  {
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public Introduction Introduction { get; set; }
+    public void AddSections(Introduction intro)
     {
-        // public int UserId { get; set; }
-        public int IntroductionId { get; set; }
-        public int ReduxId { get; set; }
-        public int something { get; set; }
+      this.Introduction = intro;
     }
+  }
 }

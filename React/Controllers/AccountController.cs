@@ -28,8 +28,9 @@ namespace React.Controllers {
       //When creating an Introduction object (or Redux, API, etc) we need to tie that object to a specific user, using an unique identifier 
 
           //we can create our own custom unique number to identify each user by making a new property, OR...
-      Introduction intro = new Introduction( user.Id );
+      Introduction intro = new Introduction();
       _db.Introductions.Add(intro);
+      user.AddSections(intro);
       _db.SaveChanges();
 
           //...get a unique identifier for each specific user from Identity
