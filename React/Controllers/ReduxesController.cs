@@ -55,6 +55,5 @@ namespace React.Controllers
     {
       return View();
     }
-    
   }
 }

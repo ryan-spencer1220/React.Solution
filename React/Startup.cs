@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using React.Models;
 
-namespace React.Solution
+namespace React
 {
     public class Startup
     {
@@ -53,12 +53,10 @@ namespace React.Solution
     {
       app.UseDeveloperExceptionPage();
 
-      //new code
       app.UseAuthentication(); 
 
       app.UseRouting();
 
-      //new code
       app.UseAuthorization();
 
       app.UseEndpoints(routes =>

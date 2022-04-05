@@ -3,7 +3,12 @@ namespace React.Models
 {
   public class FundamentalsOne
   {
+    public FundamentalsOne( string userId )
+    {
+      UserId = userId;
+    }
     public int FundamentalsOneId { get; set; }
+    public string UserId { get; set; }
     public bool Lesson1Complete { get; set; }
     public bool Lesson2Complete { get; set; }
     public bool Lesson3Complete { get; set; }

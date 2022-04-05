@@ -6,28 +6,21 @@ namespace React.Models
   {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public Introduction Introduction { get; set; }
-    public Redux Redux { get; set; }
-    public Api Api { get; set; }
-    public void AddSections(Introduction intro, Redux redux, Api api)
+    public int IntroductionId { get; set; }
+    public int FundamentalsOneId { get; set; }
+    public int FundamentalsTwoId { get; set; }
+    public int ReduxId { get; set; }
+    public int NoSQLId { get; set; }
+    public int ApiId { get; set; }
+
+    public void AddIds(int introId, int fundOne, int fundTwo, int reduxId, int noSQLId, int apiId)
     {
-      this.Introduction = intro;
-      this.Redux = redux;
-      this.Api = api;
+      IntroductionId = introId;
+      FundamentalsOneId = fundOne;
+      FundamentalsTwoId = fundTwo;
+      ReduxId = reduxId;
+      NoSQLId = noSQLId;
+      ApiId = apiId;
     }
   }
 }
-
-// namespace React.Models
-// {
-//   public class ApplicationUser : IdentityUser
-//   {
-//     public string FirstName { get; set; }
-//     public string LastName { get; set; }
-//     public Introduction Introduction { get; set; }
-//     public void AddSections(Introduction intro)
-//     {
-//       this.Introduction = intro;
-//     }
-//   }
-// }

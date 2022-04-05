@@ -29,36 +29,10 @@ namespace React.Controllers
     {
       return View();
     }
-    // [HttpPost, ActionName("Lesson1")]
-    // public async Task<ActionResult> LessonOne()
-    // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   var api = currentUser.Api;
-    //   api.Lesson1Complete = true;
-    //   _db.Entry(api)EntityState.Modified;
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
     public ActionResult Lesson2()
     {
       return View();
     }
-    //  public ActionResult Lesson2()
-    // {
-    //   return View();
-    // }
-    // [HttpPost, ActionName("Lesson2")]
-    // public async Task<ActionResult> LessonTwo()
-    // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   var api = currentUser.Api;
-    //   api.Lesson2Complete = true;
-    //   _db.Entry(api)EntityState.Modified;
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
     public ActionResult Lesson3()
     {
       return View();
@@ -74,6 +48,83 @@ namespace React.Controllers
     public ActionResult Lesson6()
     {
       return View();
+    }
+    [HttpPost, ActionName("Lesson1")]
+    public async Task<ActionResult> LessonOne()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      Api api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      api.Lesson1Complete = true;
+      _db.Entry(api).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost, ActionName("Lesson2")]
+    public async Task<ActionResult> LessonTwo()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      Api api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      api.Lesson1Complete = true;
+      _db.Entry(api).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost, ActionName("Lesson3")]
+    public async Task<ActionResult> LessonThree()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      Api api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      api.Lesson1Complete = true;
+      _db.Entry(api).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost, ActionName("Lesson4")]
+    public async Task<ActionResult> LessonFour()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      Api api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      api.Lesson1Complete = true;
+      _db.Entry(api).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost, ActionName("Lesson5")]
+    public async Task<ActionResult> LessonFive()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      Api api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      api.Lesson1Complete = true;
+      _db.Entry(api).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost, ActionName("Lesson6")]
+    public async Task<ActionResult> LessonSix()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      Api api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      api.Lesson1Complete = true;
+      _db.Entry(api).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }

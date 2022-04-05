@@ -5,6 +5,12 @@
 <hr />
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
+    @Html.LabelFor(user => user.FirstName)
+    @Html.TextBoxFor(user=> user.FirstName)
+
+    @Html.LabelFor(user => user.LastName)
+    @Html.TextBoxFor(user=> user.LastName)
+
     @Html.LabelFor(user => user.Email)
     @Html.TextBoxFor(user=> user.Email)
 
