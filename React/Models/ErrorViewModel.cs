@@ -1,6 +1,6 @@
 using System;
 
-namespace React.Solution.Models
+namespace React.Models
 {
     public class ErrorViewModel
     {

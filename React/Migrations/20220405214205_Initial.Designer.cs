@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using React.Models;
 
-namespace React.Solution.Migrations
+namespace React.Migrations
 {
     [DbContext(typeof(ReactContext))]
-    [Migration("20220405182804_AddModules")]
-    partial class AddModules
+    [Migration("20220405214205_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -179,7 +179,7 @@ namespace React.Solution.Migrations
 
                     b.HasKey("ApiId");
 
-                    b.ToTable("Apis");
+                    b.ToTable("Api");
                 });
 
             modelBuilder.Entity("React.Models.ApplicationUser", b =>
@@ -305,7 +305,7 @@ namespace React.Solution.Migrations
 
                     b.HasKey("FundamentalsOneId");
 
-                    b.ToTable("FundamentalsOnes");
+                    b.ToTable("FundamentalsOne");
                 });
 
             modelBuilder.Entity("React.Models.FundamentalsTwo", b =>
@@ -343,7 +343,7 @@ namespace React.Solution.Migrations
 
                     b.HasKey("FundamentalsTwoId");
 
-                    b.ToTable("FundamentalsTwos");
+                    b.ToTable("FundamentalsTwo");
                 });
 
             modelBuilder.Entity("React.Models.Introduction", b =>
@@ -369,7 +369,7 @@ namespace React.Solution.Migrations
 
                     b.HasKey("IntroductionId");
 
-                    b.ToTable("Introductions");
+                    b.ToTable("Introduction");
                 });
 
             modelBuilder.Entity("React.Models.NoSQL", b =>
@@ -407,7 +407,7 @@ namespace React.Solution.Migrations
 
                     b.HasKey("NoSQLId");
 
-                    b.ToTable("NoSQLs");
+                    b.ToTable("NoSQL");
                 });
 
             modelBuilder.Entity("React.Models.Redux", b =>
@@ -445,7 +445,7 @@ namespace React.Solution.Migrations
 
                     b.HasKey("ReduxId");
 
-                    b.ToTable("Reduxes");
+                    b.ToTable("Redux");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

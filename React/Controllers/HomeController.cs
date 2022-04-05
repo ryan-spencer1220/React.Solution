@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using React.Solution.Models;
+using React.Models;
 
-namespace React.Solution.Controllers
+namespace React.Controllers
 {
     public class HomeController : Controller
     {
@@ -24,6 +24,11 @@ namespace React.Solution.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Overview()
         {
             return View();
         }

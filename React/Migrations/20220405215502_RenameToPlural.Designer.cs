@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using React.Models;
 
-namespace React.Solution.Migrations
+namespace React.Migrations
 {
     [DbContext(typeof(ReactContext))]
-    [Migration("20220404233925_Initial")]
-    partial class Initial
+    [Migration("20220405215502_RenameToPlural")]
+    partial class RenameToPlural
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -147,12 +147,50 @@ namespace React.Solution.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("React.Models.Api", b =>
+                {
+                    b.Property<int>("ApiId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lesson1Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson2Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson3Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson4Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson5Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson6Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ModuleComplete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("ApiId");
+
+                    b.ToTable("Apis");
+                });
+
             modelBuilder.Entity("React.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ApiId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -166,14 +204,29 @@ namespace React.Solution.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("FundamentalsOneId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FundamentalsTwoId")
+                        .HasColumnType("int");
+
                     b.Property<int>("IntroductionId")
                         .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<int>("NoSQLId")
+                        .HasColumnType("int");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -205,9 +258,6 @@ namespace React.Solution.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
 
-                    b.Property<int>("something")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -218,6 +268,82 @@ namespace React.Solution.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("React.Models.FundamentalsOne", b =>
+                {
+                    b.Property<int>("FundamentalsOneId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lesson1Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson2Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson3Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson4Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson5Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson6Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson7Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ModuleComplete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("FundamentalsOneId");
+
+                    b.ToTable("FundamentalsOnes");
+                });
+
+            modelBuilder.Entity("React.Models.FundamentalsTwo", b =>
+                {
+                    b.Property<int>("FundamentalsTwoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lesson1Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson2Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson3Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson4Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson5Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson6Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson7Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ModuleComplete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("FundamentalsTwoId");
+
+                    b.ToTable("FundamentalsTwos");
                 });
 
             modelBuilder.Entity("React.Models.Introduction", b =>
@@ -244,6 +370,82 @@ namespace React.Solution.Migrations
                     b.HasKey("IntroductionId");
 
                     b.ToTable("Introductions");
+                });
+
+            modelBuilder.Entity("React.Models.NoSQL", b =>
+                {
+                    b.Property<int>("NoSQLId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lesson1Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson2Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson3Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson4Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson5Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson6Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson7Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ModuleComplete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("NoSQLId");
+
+                    b.ToTable("NoSQLs");
+                });
+
+            modelBuilder.Entity("React.Models.Redux", b =>
+                {
+                    b.Property<int>("ReduxId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Lesson1Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson2Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson3Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson4Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson5Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson6Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Lesson7Complete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ModuleComplete")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("ReduxId");
+
+                    b.ToTable("Reduxes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "React.Solution": {
+    "React": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

@@ -2,12 +2,32 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace React.Solution.Migrations
+namespace React.Migrations
 {
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Api",
+                columns: table => new
+                {
+                    ApiId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lesson1Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson2Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson3Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson4Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson5Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson6Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ModuleComplete = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Api", x => x.ApiId);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -27,9 +47,14 @@ namespace React.Solution.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: false),
+                    FirstName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    LastName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     IntroductionId = table.Column<int>(type: "int", nullable: false),
+                    FundamentalsOneId = table.Column<int>(type: "int", nullable: false),
+                    FundamentalsTwoId = table.Column<int>(type: "int", nullable: false),
                     ReduxId = table.Column<int>(type: "int", nullable: false),
-                    something = table.Column<int>(type: "int", nullable: false),
+                    NoSQLId = table.Column<int>(type: "int", nullable: false),
+                    ApiId = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "varchar(256) CHARACTER SET utf8mb4", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "varchar(256) CHARACTER SET utf8mb4", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "varchar(256) CHARACTER SET utf8mb4", maxLength: 256, nullable: true),
@@ -51,7 +76,49 @@ namespace React.Solution.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Introductions",
+                name: "FundamentalsOne",
+                columns: table => new
+                {
+                    FundamentalsOneId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lesson1Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson2Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson3Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson4Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson5Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson6Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson7Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ModuleComplete = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FundamentalsOne", x => x.FundamentalsOneId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FundamentalsTwo",
+                columns: table => new
+                {
+                    FundamentalsTwoId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lesson1Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson2Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson3Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson4Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson5Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson6Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson7Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ModuleComplete = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FundamentalsTwo", x => x.FundamentalsTwoId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Introduction",
                 columns: table => new
                 {
                     IntroductionId = table.Column<int>(type: "int", nullable: false)
@@ -64,7 +131,49 @@ namespace React.Solution.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Introductions", x => x.IntroductionId);
+                    table.PrimaryKey("PK_Introduction", x => x.IntroductionId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NoSQL",
+                columns: table => new
+                {
+                    NoSQLId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lesson1Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson2Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson3Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson4Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson5Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson6Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson7Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ModuleComplete = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NoSQL", x => x.NoSQLId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Redux",
+                columns: table => new
+                {
+                    ReduxId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Lesson1Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson2Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson3Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson4Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson5Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson6Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Lesson7Complete = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    ModuleComplete = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Redux", x => x.ReduxId);
                 });
 
             migrationBuilder.CreateTable(
@@ -214,6 +323,9 @@ namespace React.Solution.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Api");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -229,7 +341,19 @@ namespace React.Solution.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Introductions");
+                name: "FundamentalsOne");
+
+            migrationBuilder.DropTable(
+                name: "FundamentalsTwo");
+
+            migrationBuilder.DropTable(
+                name: "Introduction");
+
+            migrationBuilder.DropTable(
+                name: "NoSQL");
+
+            migrationBuilder.DropTable(
+                name: "Redux");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

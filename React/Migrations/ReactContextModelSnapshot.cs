@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using React.Models;
 
-namespace React.Solution.Migrations
+namespace React.Migrations
 {
     [DbContext(typeof(ReactContext))]
     partial class ReactContextModelSnapshot : ModelSnapshot
