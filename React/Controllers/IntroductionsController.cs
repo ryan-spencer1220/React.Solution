@@ -35,10 +35,9 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      
-      Introduction introWeNeed = _db.Introductions.FirstOrDefault(a => a.UserId == userId );
-      introWeNeed.Lesson1Complete = true;
-      _db.Entry(introWeNeed).State = EntityState.Modified;
+      var intro = currentUser.Introduction;
+      intro.Lesson1Complete = true;
+      _db.Entry(intro).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
