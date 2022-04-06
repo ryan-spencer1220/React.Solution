@@ -69,3 +69,16 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+/***** new stuff Eric added *****/
+.links-container  {
+  width: 40%;
+  margin: auto;
+  margin-left: 37%
+}
+
+ul ul {
+  padding-left: 1em;
+}
+/***** new stuff Eric added *****/
