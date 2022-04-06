@@ -1,15 +1,49 @@
 @using React.ViewModels
 @model LoginViewModel
 
-<h2>Log in with your account</h2>
-<hr />
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(m => m.Email)
-    @Html.TextBoxFor(m => m.Email)
+    <section id="login-page">
+      <div class="container-lg pt-5 m-5 shadow-lg rounded">
+        <div class="text-center">
+          <h2>Login</h2>
+          <p class="lead">Login To Start Learning Aboout React!</p>
+        </div>
+        <div class="row justify-content-center my-5">
+          <div class="col-lg-6">
+            <form>
+              <label for="email" class="form-label">Email Address:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
+                  @Html.TextBoxFor(m=> m.Email, new { @class="form-control" })
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Please enter your email address">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    @Html.LabelFor(m => m.Password)
-    @Html.PasswordFor(m => m.Password)
+              <label for="password" class="form-label">Password:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-file-lock2-fill"></i>
+                </span>
+                  @Html.PasswordFor(m=> m.Password, new { @class="form-control" }) 
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Please enter your password">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    <input type="submit" value="Log in" class="btn btn-default" />
+              <div class="mb-4 text-center">
+                <input type="submit" value="Log In" class="bn632-hover bn20" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 }
