@@ -16,8 +16,18 @@ namespace React.Controllers {
       _signInManager = signInManager;
       _db = db;
     }
-    public ActionResult Index() {
-      return View();
+
+    public async Task<ActionResult> Index() {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+
+      ViewBag.Introduction = _db.Introductions.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.FundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.FundamentalsTwo = _db.FundamentalsTwos.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.Redux = _db.Reduxes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.NoSQL = _db.NoSQLs.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      return View(currentUser);
     }
     public IActionResult Register() {
       return View();
@@ -66,19 +76,6 @@ namespace React.Controllers {
     public async Task<ActionResult> LogOff() {
       await _signInManager.SignOutAsync();
       return RedirectToAction("Index");
-    }
-    
-    public async Task<ActionResult> Details() {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      ViewBag.Introduction = _db.Introductions.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.FundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.FundamentalsTwo = _db.FundamentalsTwos.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.Redux = _db.Reduxes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.NoSQL = _db.NoSQLs.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
-      return View(currentUser);
     }
   }
 }
