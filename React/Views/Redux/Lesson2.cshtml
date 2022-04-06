@@ -1,33 +1,94 @@
-<h1>Redux Basics</h1>
-<a href="https://www.youtube.com/watch?v=HKU24nY8Hsc&ab_channel=TheNetNinja"</a>
-<a href="https://www.geeksforgeeks.org/introduction-to-react-redux "</a>
-<a href="https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/"</a>
-<a href="https://rossbulat.medium.com/redux-for-react-a-simple-introduction-b1f9dcbda8f4"</a>
-<a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react"</a>
-<a href="https://www.digitalocean.com/community/tutorials/redux-redux-intro "</a>
-
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Submit" />
-}
-
-<div class="title">
-  <h1>Redux Basics</h1>
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
 </div>
 
-<div class="content"></div>
 
-<div class="resources">resources</div>
+<div class="text-center p-4">
+  <h2>Redux Terminology</h2>
+  <p class="lead">Actions, Stores, & Reducers</p>
+</div>
 
-The ones familiar with react will know that react is a component-based front end library tool that connects the various segments of the web page. In react, we use props (short for properties) in a component which allows the usage of non-static variables. With the help of props, we can pass these variables into various other components (child components) from the parent component.
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
 
-This brings the need for react-redux in our react application. React-redux being a state management tool makes it easier to pass these states from one component to another irrespective of their position in the component tree and hence prevents the complexity of the application.
-
-Working Procedure: When a react application holds various components in need of state from other components it becomes difficult to realize where the state should reside among these components to make it easier to maintain. React-redux provides a store which makes the state inside components easier to maintain. Along with stores, react-redux introduces actions and reducers which work simultaneously with stores to make the state more predictable. The working of the features in react-redux is explained below: 
-
-Store: It contains the state of the components which need to be passed to other components. The store makes this passing along much easier as we no longer need to maintain a state inside a parent component in order to pass the same to its children components.
-Actions:The actions part of the react-redux basically contains the different actions that are to be performed on the state present in the store.The actions included must contain the type of the action and can also contain payload(data field in the actions).
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">
+      The ones familiar with react will know that react is a component-based front end library tool that connects the various segments of the web page. In react, we use props (short for properties) in a component which allows the usage of non-static variables. With the help of props, we can pass these variables into various other components (child components) from the parent component.
+    </p>
+    <p class="lead">  
+    This brings the need for react-redux in our react application. React-redux being a state management tool makes it easier to pass these states from one component to another irrespective of their position in the component tree and hence prevents the complexity of the application.
+    </p>
+    <p class="lead">Working Procedure</p>
+    <p class="lead">
+    When a react application holds various components in need of state from other components it becomes difficult to realize where the state should reside among these components to make it easier to maintain. React-redux provides a store which makes the state inside components easier to maintain. Along with stores, react-redux introduces actions and reducers which work simultaneously with stores to make the state more predictable. The working of the features in react-redux is explained below: 
+    </p>
+    <p class="lead">Stores</p>
+    <p class="lead">
+    Stores contain the state of the components which need to be passed to other components. The store makes this passing along much easier as we no longer need to maintain a state inside a parent component in order to pass the same to its children components.
+    Actions:The actions part of the react-redux basically contains the different actions that are to be performed on the state present in the store.The actions included must contain the type of the action and can also contain payload(data field in the actions).
 Example: Actions of increment and decrements in a react app: 
+    </p>
+    <p class="lead">Reducers</p>
+    <p class="lead">
+    The reducers in react-redux are the pure functions that contain the operations that need to be performed on the state. These functions accept the initial state of the state being used and the action type. It updates the state and responds with the new state. This updated state is sent back to the view components of the react to make the necessary changes. A reducer must contain the action type.
+    Example: Reducer which updates the state in accordance with the action type 1st program and the 2nd program shows the snippet of creating the store which accepts the reducer.
+    </p>
+  </div>
+</section>
 
-Reducers: The reducers in react-redux are the pure functions that contain the operations that need to be performed on the state. These functions accept the initial state of the state being used and the action type. It updates the state and responds with the new state. This updated state is sent back to the view components of the react to make the necessary changes. A reducer must contain the action type.
-Example: Reducer which updates the state in accordance with the action type 1st program and the 2nd program shows the snippet of creating the store which accepts the reducer.
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Redux Basics & Common Terminology</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/HKU24nY8Hsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Redux/Lesson1"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Redux/Lesson3"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.youtube.com/watch?v=HKU24nY8Hsc&ab_channel=TheNetNinja">The Complete React Tutorial: Introudction To Redux</a>
+  <a href="https://www.geeksforgeeks.org/introduction-to-react-redux"> Introduction To Redux</a>
+  <a href="https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/">An Introudction To Redux</a>
+  <a href="https://rossbulat.medium.com/redux-for-react-a-simple-introduction-b1f9dcbda8f4">Redux For React: A Simple Introduction</a>
+  <a href="https://redux.js.org/tutorials/fundamentals/part-5-ui-react">React Fundamentals</a>
+  <a href="https://www.digitalocean.com/community/tutorials/redux-redux-intro">Redux-React Intro</a>
+</div>
+

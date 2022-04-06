@@ -1,29 +1,91 @@
-<h1>Install/Setup Of Redux</h1>
-<a href="https://www.youtube.com/watch?v=f87wPQMgF4c&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=39">React & Redux: Store Subscriptions</a>
-<a href="https://react-redux.js.org/introduction/getting-started">React-Redux: Getting Started</a>
-<a href="https://dev.to/bhatvikrant/how-to-setup-redux-with-react-2020-cdj">How To Setup Redux With React</a>
-
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Submit" />
-}
-
-<div class="title">
-  <h1>Install/Setup Of Redux</h1>
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
 </div>
 
-<div class="content"></div>
+<div class="text-center p-4">
+  <h2>Installing & Setting Up Redux</h2>
+  <p class="lead">Get Started On Your First Application With Redux!</p>
+</div>
 
-<div class="resources">resources</div>
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
 
-Step 1: Setup your react project
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">
+    Step 1: Setup your react project
+    </p>
+    <p>
+      
+    </p>
+    <p class="lead">
+    Step 2: Install redux and react-redux
+    </p>
+    <p class="lead">
+    Step 3: Setup Redux Store in your index.js
+    </p>
+    <p class="lead">
+    Step 4: Setup counter reducer/actions/types
+    </p>
+    <p class="lead">
+    Step 5: JSX for increment / decrement buttons
+    </p>
+    <p class="lead">
+    Step 6: Connect redux state/actions to a component
+    </p>
+  </div>
+</section>
 
-Step 2: Install redux and react-redux
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React-Redux Setup</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/0bVP5cYhMuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
-Step 3: Setup Redux Store in your index.js
 
-Step 4: Setup counter reducer/actions/types
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/redux/Lesson2"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Redux/Lesson4"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
 
-Step 5: JSX for increment / decrement buttons
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.youtube.com/watch?v=f87wPQMgF4c&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=39">React & Redux: Store Subscriptions</a>
+  <a href="https://react-redux.js.org/introduction/getting-started">React-Redux: Getting Started</a>
+  <a href="https://dev.to/bhatvikrant/how-to-setup-redux-with-react-2020-cdj">How To Setup Redux With React</a>
+  <a href="https://www.youtube.com/watch?v=0bVP5cYhMuU&ab_channel=Codevolution">React Redux Setup</a>
+</div>
 
-Step 6: Connect redux state/actions to a component
