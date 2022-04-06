@@ -1,0 +1,95 @@
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>Introduction to React: Lesson Two</h2>
+  <p class="lead">React's Bread and Butter</p>
+  <p class="lead">JSX and Virtual DOM</p>
+</div>
+
+@if (ViewBag.IsComplete == true)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == false)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">JSX (short for JavaScript eXtension) is a React extension that makes it easy for web developers to add dynamic content and modify their DOM by using simple, HTML-style code mixed with Javascript.</p>
+    <p class="lead">  
+    If a developer uses JSX to manipulate and update its DOM, React JS creates something called a Virtual DOM. This is the second feature of React that makes building out user interfaces so efficient. React uses the Virtual DOM to see what parts of the actual DOM need to change when an event happens (like a user clicking a button). Instead of updating the entire DOM to reflect the change of this clicked button, React scans the Virtual DOM to see what changed after a user action and selectively updates that section of the DOM only.
+Without using React, the entire DOM would have to update to reflect this change (using the time and processing power it takes to make this update).</p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>JSX Tutorial</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=7fPXI_MnBOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>The Power of JSX</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=BS9g6Z3lbBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>How does ReactJS update the DOM?</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=Iw2BLUjQo1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Introduction/Lesson1"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Introduction/Lesson3"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://reactjs.org/docs/jsx-in-depth.html">JSX In Depth</a>
+  <a href="https://www.newline.co/fullstack-react/p/jsx-and-the-virtual-dom/">JSX and the Virtual DOM</a>
+  <a href="https://www.youtube.com/watch?v=BYbgopx44vo">React and the Virtual DOM</a>
+</div>
