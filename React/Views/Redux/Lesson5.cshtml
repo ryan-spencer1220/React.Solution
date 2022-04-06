@@ -1,9 +1,80 @@
-<h1>Redux Reducers</h1>
-<a href="https://www.pluralsight.com/guides/how-to-write-redux-reducer">Link One</a>
-<a href="https://redux.js.org/usage/structuring-reducers/structuring-reducers">Link Two</a>
-<a href="https://linguinecode.com/post/understanding-redux-reducers">Link Three</a>
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
 
-@using (Html.BeginForm())
+
+<div class="text-center p-4">
+  <h2>Redux Reducers</h2>
+  <p class="lead">CRUD Functionality With Redux</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Submit" />
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">
+    At its core, Redux is really a fairly simple design pattern: all your "write" logic goes into a single function, and the only way to run that logic is to give Redux a plain object that describes something that has happened. The Redux store calls that write logic function and passes in the current state tree and the descriptive object, the write logic function returns some new state tree, and the Redux store notifies any subscribers that the state tree has changed.
+    </p>
+    <p class="lead">
+    Redux puts some basic constraints on how that write logic function should work. Redux has to have a signature of (previousState, action) => newState, is known as a reducer function, and must be pure and predictable.
+    </p>
+    <p class="lead">
+    Beyond that, Redux does not really care how you actually structure your logic inside that reducer function, as long as it obeys those basic rules. This is both a source of freedom and a source of confusion. However, there are a number of common patterns that are widely used when writing reducers, as well as a number of related topics and concepts to be aware of. As an application grows, these patterns play a crucial role in managing reducer code complexity, handling real-world data, and optimizing UI performance.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Redux Reducers</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+<iframe width="760" height="515" src="https://www.youtube.com/embed/w3okdbomqxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Redux/Lesson4"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Redux/Lesson6"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.pluralsight.com/guides/how-to-write-redux-reducer">How To Write Redux Reducers</a>
+  <a href="https://redux.js.org/usage/structuring-reducers/structuring-reducers">Structuring Reducers</a>
+  <a href="https://linguinecode.com/post/understanding-redux-reducers">Understanding Redux Reducers</a>
+</div>
+

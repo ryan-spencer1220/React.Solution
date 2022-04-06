@@ -71,15 +71,6 @@ namespace React.Controllers
       return View();
     }
 
-    public async Task<ActionResult> Lesson6()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      Api Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = Api.Lesson6Complete;
-      return View();
-    }
     [HttpPost, ActionName("Lesson1")]
     public async Task<ActionResult> LessonOne()
     {
@@ -169,25 +160,6 @@ namespace React.Controllers
       } else if (Api.Lesson5Complete == false)
       {
       Api.Lesson5Complete = true;
-      }
-      _db.Entry(Api).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction();
-    }
-
-    [HttpPost, ActionName("Lesson6")]
-    public async Task<ActionResult> LessonSix()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      Api Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
-      if (Api.Lesson6Complete == true)
-      {
-        Api.Lesson6Complete = false;
-      } else if (Api.Lesson6Complete == false)
-      {
-      Api.Lesson6Complete = true;
       }
       _db.Entry(Api).State = EntityState.Modified;
       _db.SaveChanges();

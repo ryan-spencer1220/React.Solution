@@ -1,0 +1,103 @@
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>Updating State with Events & UUID</h2>
+  <p class="lead">Using State Effectively</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">  
+      Now we are ready to use State in powerful ways to update component parts of our UI dynamically using State. As an example, on Facebook when you click "like" on a post, you want to see the result of your action displayed in the UI, but you do not want the entire page to update, which could be disconcerting or possibly cause you to lose data. We used similar concept in JavaScript with event listeners with DOM and event handling, but now we get more advanced and use React. 
+    
+      A JavaTpoint tutorial describes it this way:
+      <blockquote class="px-5 p-3 px-3 mx-5 p-3 border border-light font-italic">React has its own event handling system which is very similar to handling events on DOM elements. The react event handling system is known as Synthetic Events. The synthetic event is a cross-browser wrapper of the browser's native event.</blockquote>
+    </p>
+       
+    <p class="lead">
+      There are also code and a visual diagram, you can find the tutorial <a href="https://www.javatpoint.com/react-events">here</a>.
+    </p>
+    <p class="lead">
+    </p>
+    <p class="lead">
+    We've included 2 videos below for a further explaning Changing State with Events, and create UUID's. 
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Changing State with Mouse Events</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://youtube.com/embed/SzYnG9mVDF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Using UUID Library in React</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://youtube.com/embed/L-F8Qs4M7-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/FundamentalsTwo/Lesson4"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsTwo/Lesson6"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <p class="mt-3 font-weight-bold">State + Events Links</p>
+  <a href="https://learn.co/lessons/react-updating-state">Learn.co - Updating State</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_interactivity_events_state">Mozilla.org - React interactivity: Events and state</a>
+  <a href="https://blog.logrocket.com/why-react-doesnt-update-state-immediately/">Why React Doesn't Update State Immediately</a>
+  <a href="https://www.javatpoint.com/react-events">JavaTpoint tutorial</a>
+
+  <p class="mt-3 font-weight-bold">UUID Links</p>
+
+  <a href="https://www.geeksforgeeks.org/how-to-create-an-unique-id-in-reactjs/">UUID: How to create a unique id in React.js </a>
+  <a href="https://www.youtube.com/watch?v=w0VFcVYIfhg">What is a UUID? (youtube video)</a>
+</div>
+
+
