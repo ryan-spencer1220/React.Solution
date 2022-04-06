@@ -1,0 +1,85 @@
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>Reusing Components</h2>
+  <p class="lead">Keeping it DRY</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">  
+    As stated <a href="https://medium.com/edonec/state-in-react-an-overview-a182675cee2c">in this Medium article</a>, State is used to represent the current status of an object:
+
+    <blockquote class="px-5 p-3 px-3 mx-5 p-3 border border-light">State is a plan JavaScript object used by React to represent an information about the component's current situation. It’s managed in the component (just like any variable declared in a function). The difference is while a “normal” variable “disappears” when their function exits, the state variables are preserved by React.</blockquote>
+    </p>
+    <p class="lead">
+    State tells the application when a component should be re-rendered. <a href="https://medium.com/edonec/state-in-react-an-overview-a182675cee2c">When the state object changes, the component re-renders</a>. In this way, not everything on screen must be refreshed in order to make small changes to parts of your page when 
+    </p>
+    <p class="lead">
+    Both Geeks for Geeks and Tim Smith have more in-depth articles outlining the difference between Props and State and going into greater depth. You can find their articles <a href="https://www.iamtimsmith.com/blog/this-state-how-to-use-state-in-react">here</a> and <a href="https://www.geeksforgeeks.org/reactjs-state-react/">here</a>. 
+    </p>
+    <p class="lead">
+    Check out the video below for a great explanation of the basics. 
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Reusing Components</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/-YpnB-zlkPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/FundamentalsTwo/Lesson5"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsTwo/Lesson7"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://blog.logrocket.com/building-reusable-ui-components-with-react-hooks/">Building Reusable UI Components</a>
+  <a href="https://blog.bitsrc.io/reusable-components-in-react-a-practical-guide-ec15a81a4d71?gi=7b0ad42eeb15">Reusable Components in React: A Practical Guide</a>
+  <a href="https://medium.com/codezillas/how-to-reuse-react-components-851ffcc68a9c">How To Reuse React Components</a>
+  <a href="https://www.freecodecamp.org/news/how-to-create-a-truly-reusable-react-component-from-scratch/">How To Create A Reusable React Component From Scratch</a>
+</div>
+

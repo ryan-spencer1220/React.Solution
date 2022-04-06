@@ -1,19 +1,142 @@
-<h1>Further Exploration & Advanced Redux Topics</h1>
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
 
-<h4>Redux & React Hooks</h4>
-<a href="https://react-redux.js.org/api/hooks">Link One</a>
-<a href="https://www.youtube.com/watch?v=3zoIigieur0&ab_channel=techsith">Link Two</a>
 
-<h4>Redux Toolkit</h4>
-<a href="https://redux-toolkit.js.org/introduction/getting-started">Link Two</a>
-<a href="https://www.youtube.com/watch?v=iBUJVy8phqw&ab_channel=TheNetNinja">Link Four</a>
+<div class="text-center p-4">
+  <h2>Advanced Redux Topics</h2>
+  <p class="lead">Futher Exploration With React-Redux</p>
+</div>
 
-<h4>Redux Thunk</h4>
-<a href="https://www.youtube.com/watch?v=apg98RIJfJo&list=PL4cUxeGkcC9iWstfXntcj8f-dFZ4UtlN3&index=14&ab_channel=TheNetNinja">Link Five</a>
-<a href="https://github.com/reduxjs/redux-thunk">Link Six</a>
-<a href="https://redux.js.org/usage/writing-logic-thunks">Link Seven</a>
-
-@using (Html.BeginForm())
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Submit" />
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">Redux & React Hooks</p>
+    <p class="lead">
+    React's new "hooks" APIs give function components the ability to use local component state, execute side effects, and more. React also lets us write custom hooks, which let us extract reusable hooks to add our own behavior on top of React's built-in hooks.
+    </p>
+    <p class="lead">
+    React Redux includes its own custom hook APIs, which allow your React components to subscribe to the Redux store and dispatch actions.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Hooks With React-Redux</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+       <iframe width="760" height="515" src="https://www.youtube.com/embed/_oK9Jd8LH1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">Redux Toolkit</p>
+      <p class="lead">
+      The Redux Toolkit package is intended to be the standard way to write Redux logic. It was originally created to help address three common concerns about Redux:
+      </p>
+      <p class="lead">
+      "Configuring a Redux store is too complicated"
+      "I have to add a lot of packages to get Redux to do anything useful"
+      "Redux requires too much boilerplate code"
+      We can't solve every use case, but in the spirit of create-react-app, we can try to provide some tools that abstract over the setup process and handle the most common use cases, as well as include some useful utilities that will let the user simplify their application code.
+      </p>
+      <p class="lead">
+      Redux Toolkit also includes a powerful data fetching and caching capability that we've dubbed "RTK Query". It's included in the package as a separate set of entry points. It's optional, but can eliminate the need to hand-write data fetching logic yourself.
+      </p>
+      <p class="lead">
+      These tools should be beneficial to all Redux users. Whether you're a brand new Redux user setting up your first project, or an experienced user who wants to simplify an existing application, Redux Toolkit can help you make your Redux code better.
+      </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Redux Toolkit Tutorial</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/iBUJVy8phqw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">Redux Thunk</p>
+      <p class="lead">
+      The word "thunk" is a programming term that means "a piece of code that does some delayed work". Rather than execute some logic now, we can write a function body or code that can be used to perform the work later.
+      </p>
+      <p class="lead">
+      For Redux specifically, "thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
+      </p>
+      <p class="lead">
+      Using thunks requires the redux-thunk middleware to be added to the Redux store as part of its configuration.
+      </p>
+      <p class="lead">
+      Thunks are the standard approach for writing async logic in Redux apps, and are commonly used for data fetching. However, they can be used for a variety of tasks, and can contain both synchronous and asynchronous logic.
+      </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Redux Thunk Basics</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/apg98RIJfJo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Redux/Lesson6"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/"><button class="bn632-hover bn20">Dashboard</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://react-redux.js.org/api/hooks">React-Redux Hooks</a>
+  <a href="https://www.youtube.com/watch?v=3zoIigieur0&ab_channel=techsith">Using Hooks With React-Redux</a>
+
+  <a href="https://redux-toolkit.js.org/introduction/getting-started">Getting Started With Redux Toolkit</a>
+  <a href="https://www.youtube.com/watch?v=iBUJVy8phqw&ab_channel=TheNetNinja">Redux Toolkit</a>
+
+  <a href="https://www.youtube.com/watch?v=apg98RIJfJo&list=PL4cUxeGkcC9iWstfXntcj8f-dFZ4UtlN3&index=14&ab_channel=TheNetNinja">Redux Thunk</a>
+  <a href="https://github.com/reduxjs/redux-thunk">Redux Thunk GitHub Resources</a>
+  <a href="https://redux.js.org/usage/writing-logic-thunks">Writing Logic Thunks</a>
+</div>
