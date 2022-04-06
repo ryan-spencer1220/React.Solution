@@ -1,22 +1,121 @@
-@Html.ActionLink("⬅️ Previous Page", "Overview", "Home")
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png" width="138" height="128">
+</div>
 
-@if (ViewBag.IsComplete == true)
+
+<div class="text-center p-4">
+  <h2>SQL vs. NoSQL</h2>
+  <p class="lead">What's the Difference?</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <p>✅ Completed!</p>
   @using (Html.BeginForm())
   {
-    <input type="submit" value="Actually, It's not complete" />
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
   }
-} else if (ViewBag.IsComplete == false)
+} else if (ViewBag.IsComplete == true)
 {
-  @using (Html.BeginForm())
-  {
-    <input type="submit" value="Mark Complete" />
-  }
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
 
-@Html.ActionLink("Next Page ➡️", "Lesson2")
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">    
+    <p>The following explanation was taken from IBM's website:</p>
+    <blockquote cite="https://www.ibm.com/cloud/blog/sql-vs-nosql">
+      "A SQL database supports structured query language (SQL) — a domain-specific programming language for querying and manipulating data in a relational database. The key to the relational model is abstracting data as a set of tuples organized into “relations,” which allows for abstraction over the physical representation of data and access paths."
+    </blockquote>
+      <blockquote cite="https://www.ibm.com/cloud/blog/sql-vs-nosql">
+      “NoSQL, also referred to as “not only SQL”, “non-SQL”, is an approach to database design that enables the storage and querying of data outside the traditional structures found in relational databases. While it can still store data found within relational database management systems (RDBMS), it just stores it differently compared to an RDBMS. The decision to use a relational database versus a non-relational database is largely contextual, and it varies depending on the use case.
+      Instead of the typical tabular structure of a relational database, NoSQL databases house data within one data structure, such as JSON document. Since this non-relational database design does not require a schema, it offers rapid scalability to manage large and typically unstructured data sets.”
+    </blockquote>
+    <h3>Pros & Cons of Each:</h3>
+    <br>
+    <div class="row">
+      <div class="col-6">
+        <h5>SQL Pros:</h5>
+        <ul>
+          <li><strong>Flexible queries:</strong> Enables support for diverse workloads. Abstracts data over underlying implementations and allows engines to optimize queries to fit on-disk representations.</li>
+          <li><strong>Reduced data storage footprint:</strong> Due to normalization and other optimization opportunities, a reduced footprint maximizes database performance and resource usage.</li>
+          <li><strong>Strong and well-understood data integrity semantics:</strong> Atomicity, consistency, isolation and durability, or ACID, are database properties that guarantee valid transactions.</li>
+        </ul>
+        <h5>SQL Cons:</h5>
+        <ul>
+          <li><strong>Rigid data models:</strong> Requires careful up-front design to ensure adequate performance and resistance to evolution. SQL has a predefined schema, so changing it often includes downtime.</li>
+          <li><strong>Limited horizontal scalability:</strong> It is either completely unsupported, supported in an ad-hoc way or only supported on relatively immature technologies.</li>
+          <li><strong>Single point of failure:</strong> Non-distributed engines are mitigated by replication and failover techniques.</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <h5>NoSQL Pros:</h5>
+        <ul>
+          <li><strong>Scalable and highly available:</strong> Many NoSQL databases are designed to support seamless, online horizontal scalability without significant single points of failure.</li>
+          <li><strong>Flexible data models:</strong> Most non-relational systems do not require developers to make up-front commitments to data models. Existing schemas are dynamic, so they can often be changed “on the fly.”</li>
+          <li><strong>Dynamic schema for unstructured data:</strong> Documents can be created without a defined structure first, which enables each to have its own unique structure.  Syntax varies per database and fields can be added as you build the document.</li>
+          <li><strong>High performance:</strong> A limited database functionality range (e.g., by relaxing durability guarantees) enables high performance amongst many NoSQL databases.</li>
+          <li><strong>High-level data abstractions:</strong> Beyond the "value in a cell" data model, NoSQL systems provide high-level APIs for powerful data structures. For example, Redis includes a native-sorted set abstraction.</li>
+        </ul>
+        <h5>NoSQL Cons:</h5>
+        <ul>
+          <li><strong>Vague interpretations of ACID constraints:</strong> Despite the widespread belief that it supports NoSQL systems, ACID interpretations can be too broad to make clear determinations about database semantics.</li>
+          <li><strong>Distributed systems have distributed systems problems:</strong> Though not specific to NoSQL systems, encountering such problems is common amongst NoSQL developers and may require SME troubleshooting.</li>
+          <li><strong>Lack of flexibility in access patterns:</strong> Without the abstraction found in relational databases, the on-disk representation of data leaks into the application's queries and leaves no room for NoSQL engines to optimize queries.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=v_hR4K4auoQ">
-</iframe>
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>What is a NoSQL Database?</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/v_hR4K4auoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Introduction to NoSQL Databases</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/uD3p_rZPBUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Overview"><button class="bn632-hover bn20">Dashboard</button></a>
+    <a href="/NoSQL/Lesson2"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.ibm.com/cloud/blog/sql-vs-nosql">IBM: SQL vs. NoSQL</a>
+  <a href="https://www.cloudflare.com/learning/serverless/glossary/backend-as-a-service-baas/">Cloudflare: BaaS (Backend as a Service)</a>
+  <a href="https://www.youtube.com/watch?v=W2Z7fbCLSTw">7 Database Paradigms</a>
+</div>
