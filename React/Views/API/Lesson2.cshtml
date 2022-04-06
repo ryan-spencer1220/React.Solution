@@ -1,1 +1,77 @@
-Lesson2
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
+
+<div class="text-center p-4">
+  <h2>React with APIs</h2>
+  <p class="lead">Redux Middleware</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+      }
+      </div>
+    </div>
+  </div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+      </div>
+    </div>
+  </div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">What is middleware exactly? There's no exact definition in computer programming and it can mean many different things. It's often referred to as the "glue" that allows different applications or components to communicate. In our case, we can think of middleware as something that we're going to stick in the middle of our reducer actions. This actually ties into the idea of a thunk, which, as you might guess, is what the Redux-Thunk library is named for.
+    </p>
+    <p class="lead">So why do we need middleware and thunks with Redux, anyway? Well, Redux isn't a very complex library. There are a lot of things it can't do. To give it more functionality, we can pause our Redux actions, insert thunks that do other things (like handle asynchronous code), and then resume our Redux actions. Here's an analogy. A group of carpenters fixing up a house realize there's an electrical issue they can't handle. They pause their work while an electrician comes in and takes care of the wiring. Then the carpenters go back to fixing up the house.
+    </p>
+    <p class="lead">It's important to note that even though we can create our own custom middleware outside of Redux, or use external middleware libraries, any middleware we use always relies on Redux's built-in functionality. That includes the middleware provided by the Redux Thunk library. In other words, Redux provides the basics along with the flexibility to use external middleware for use cases such as making API calls or code that creates other side effects.
+    </p>
+    <p class="lead">So how could we actually incorporate a piece of middleware into a React application that uses Redux? We need to use Redux's applyMiddleware() function when we instantiate our store. We import a reducer and also import our middleware. As you can probably infer by the import statement for middlewareExample, we'd store each custom middleware in a middleware directory. Finally, when we create our store, we pass in our reducer as the first argument and then applyMiddleware() as the second argument. applyMiddleware() itself takes our custom middleware as an argument. At that point, Redux will take care of the rest. As long as any middleware we use follows the prescribed syntax , our middleware will be applied to any action that needs it.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React Redux Tutorials - 11 - Middleware</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=8zPyXAWS0L4&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=11" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/api/lesson1"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/api/lesson3"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/introduction-to-redux-middleware">Learn How to Program: React - React with APIs - Lesson 3: Introduction to Redux Middleware</a>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/writing-custom-middleware">Learn How to Program: React - React with APIs - Lesson 5: Writing Custom Middleware</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Middleware">React Middleware Documentation</a>
+  <a href="https://www.youtube.com/watch?v=8zPyXAWS0L4&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=11">React Redux Tutorials - 11 - Middleware</a>
+</div>

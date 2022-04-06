@@ -1,4 +1,100 @@
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>React with APIs</h2>
+  <p class="lead">Building an API Application with React and Redux</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Mark Complete" />
+  @using (Html.BeginForm())
+  {
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+      }
+      </div>
+    </div>
+  </div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+      </div>
+    </div>
+  </div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">There is a key difference between the React/Redux applications we built a few weeks ago and the one we're building now - this one will incorporate middleware to handle asynchronous code. We'll handle the asynchronous code in a future lesson. For now, we'll focus on all the reducer actions we can create. Because our reducers need to be pure and can't use async code, we can keep our actions very simple.Instead, let's think about the default state of our store and the actions our reducer will need to take for that state to be updated.
+    </p>
+    <p class="lead">We already know what the default state will be - it's the same state that we used when we made an API call with just React and fetch(). The difference is that our state will belong to a Redux store, not a component's local state. This makes sense - before we make an API call, isLoading will be set to false. Then, when we make the API call, isLoading will be set to true. Finally, when the response is returned, isLoading will be set to false again - and a reducer action will also pass either the current headlines or an error to the Redux store.
+    </p>
+    <p class="lead">It should be clear that we need to make a distinction between requesting data from an API and receiving data from the API. We can't just have a single action handling both of these things - even though we were able to handle both with a single makeApiCall() method when we just used fetch() with React.The act of requesting data, from the perspective of Redux, just means setting isLoading to true. We'll use an async action to make the actual API call during this time. However, our reducer can't worry about that because it needs to be pure. Then, when our async action is complete, it will trigger another action that deals with receiving data. More on that soon.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>API Calls in React/Redux Part 1</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=EgGXWQEmsQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">First, we need to import connect from React Redux. This will allow us to wrap our component with an HOC that provides Redux functionality such as the dispatch() function. Next, we need to import makeApiCall(), the async action we created in the last lesson. We remove this.state from the constructor. We're using Redux to fully handle our state now.
+    </p>
+    <p class="lead">We also remove makeApiCall(). That function has been refactored and moved to the file where we store our action creators. We still make our API call in componentDidMount(). However, now we're using dispatch() to trigger it. Note that we aren't dispatching any of our reducer actions in Headlines.js - that's all being done in our async action. (There are plenty of use cases where we would dispatch reducer actions still - however, we just don't need to do so here.) In our render() method, we deconstruct this.props. We've added mapStateToProps() to map isLoading, headlines and error from Redux state.
+    </p>
+    <p class="lead"> Finally, we use connect() to wrap our component in an HOC with Redux functionality. One more thing to note - we use index with map to give each headline an id. While this works fine, we recommend using UUID to set up ids instead. Now we can run our application and everything will be working correctly. 
+    </p>
+    <p class="lead">That's all Redux Thunk really is. It looks pretty similar to our custom middleware function. It uses currying to return a series of functions. And by doing so, we can use code with side effects alongside our reducers, which only allow for pure actions. Each piece of middleware returns an action, dispatches it, and then moves on to the next piece of middleware - or resumes the action - with next().
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>API Calls in React/Redux Part 2</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=K8SKowV7Zpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/api/lesson3"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/api/lesson5"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/building-an-api-application-with-react-and-redux">Learn How to Program: React - React with APIs - Lesson 4: Building an API Application with React and Redux</a>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/building-an-api-application-with-react-and-redux-part-2">Learn How to Program: React - React with APIs - Lesson 7: Building an API Application with React and Redux: Part 2</a>
+  <a href="https://www.youtube.com/watch?v=EgGXWQEmsQ0">API Calls in React/Redux Part 1</a>
+  <a href="https://www.youtube.com/watch?v=K8SKowV7Zpk">API Calls in React/Redux Part 2</a>
+</div>
