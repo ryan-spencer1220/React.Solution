@@ -1,11 +1,129 @@
-<h1>Redux Stores</h1>
-<a href="https://www.youtube.com/watch?v=qlCnK9H9NTc&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a&index=4">Link One</a>
-<a href="https://www.youtube.com/watch?v=sNyXE35liAE&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=35">Link Two</a>
-<a href="https://react-redux.js.org/using-react-redux/accessing-store">Link Three</a>
-<a href="https://redux.js.org/api/store">Link Four</a>
-<a href="https://lightrains.com/blogs/redux-store-explanation-for-beginners/">Link Five</a>
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
 
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <h2>Redux Stores</h2>
+  <p class="lead">Application State Containers</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Submit" />
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">Redux is a predictable state container for javascript applications. This means whenever there are changes within the application including both data and UI changes, those changes are contained in a single javascript object called the state. The state is often referred to as the single-source-of-truth because it is never mutated or modified, but instead recreated.
+    </p>
+    <p class="lead">  
+    With a single-source-of-truth we can better predict the state of the application at a giving moment.</p>
+    <p class="lead">
+    Redux is a predictable state container for JavaScript apps.
+    </p>
+    <p class="lead">
+    It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
+    </p>
+    <p class="lead">
+    You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.
+    </p>
+    <p class="lead">
+    A store is an immutable object tree in Redux. A store is a state container which holds the application's state. Redux can have only a single store in your application. Whenever a store is created in Redux, you need to specify the reducer. Let us see how we can create a store using the createStore method from Redux.
+      </p>
+      <p class="lead">
+    A store is not a class. It's just an object with a few methods on it. To create it, pass your root reducing function to createStore.
+      </p>
+      <p class="lead fw-bold">
+    Store Methods
+      </p>
+        <ul class="lead">
+          <li>getState()</li>
+          <li>dispatch(action)</li>
+          <li>subscribe(listener)</li>
+          <li>replaceReducer(nextReducer)</li>
+        </ul>
+      <p class="lead">
+        getState()
+      </p>
+      <p class="lead">
+        Returns the current state tree of your application. It is equal to the last value returned by the store's reducer.
+      </p>
+      <p class="lead">
+    dispatch(action)
+      </p>
+      <p class="lead">
+    Dispatches an action. This is the only way to trigger a state change.
+      </p>
+      <p class="lead">
+    The store's reducing function will be called with the current getState() result and the given action synchronously. Its return value will be considered the next state. It will be returned from getState() from now on, and the change listeners will immediately be notified.
+      </p>
+      <p class="lead">
+    subscribe(listener)
+      </p>
+      <p class="lead">
+    Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changed. You may then call getState() to read the current state tree inside the callback.
+      </p>
+      <p class="lead">
+    replaceReducer(nextReducer)
+      </p>
+      <p class="lead">
+    Replaces the reducer currently used by the store to calculate the state.
+      </p>
+      <p class="lead">
+    It is an advanced API. You might need this if your app implements code splitting, and you want to load some of the reducers dynamically. You might also need this if you implement a hot reloading mechanism for Redux.
+  </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Redux Stores</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/qlCnK9H9NTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Redux/Lesson3"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Redux/Lesson5"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+<a href="https://www.youtube.com/watch?v=qlCnK9H9NTc&list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a&index=4">Redux Tutorial - Stores</a>
+<a href="https://www.youtube.com/watch?v=sNyXE35liAE&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=35">Net Ninja: Redux Stores</a>
+<a href="https://react-redux.js.org/using-react-redux/accessing-store">Accessing The Redux Store</a>
+<a href="https://redux.js.org/api/store">Redux Stores</a>
+<a href="https://lightrains.com/blogs/redux-store-explanation-for-beginners/">Redux Stores: An Explanation For Beginners</a>
+</div>
+

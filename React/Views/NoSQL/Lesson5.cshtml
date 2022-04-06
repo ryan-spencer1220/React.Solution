@@ -1,4 +1,87 @@
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>React Router</h2>
+  <p class="lead">A Library Within a Library for JavaScript</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Mark Complete" />
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">    
+    <p>From the React Router tutorial:</p>
+    <blockquote cite="https://reactrouter.com/docs/en/v6/getting-started/tutorial">
+      “React Router is a fully-featured client and server-side routing library for React, a JavaScript library for building user interfaces. React Router runs anywhere React runs; on the web, on the server with node.js, and on React Native.”
+    </blockquote>
+    <p>Here's how freecodecamp.com describes React Router:</p>
+    <blockquote cite="https://www.freecodecamp.org/news/react-router-in-5-minutes/">
+      "Many modern websites are actually made up of a single page, they just look like multiple pages because they contain components which render like separate pages. These are usually referred to as SPAs - single-page applications. At its core, what React Router does is conditionally render certain components to display depending on the route being used in the URL (/ for the home page, /about for the about page, etc.)... If you want to easily navigate around a React app, forget the anchor tags and add React Router. It's clean, it's organized, and it makes adding and deleting pages a whole lot easier."
+    </blockquote>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React Router Tutorial</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/Law7wfdg_ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React Router Crash Course</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/Jppuj6M1sJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/NoSQL/Lesson4"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/NoSQL/Lesson6"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://reactrouter.com/docs/en/v6">Official React Router Documentation</a>
+  <a href="https://www.w3schools.com/react/react_router.asp">W3Schools: React Router</a>
+  <a href="https://betterprogramming.pub/8-basic-and-advanced-react-router-tips-6993ece8f57a">8 Basic and Advanced React Router Tips</a>
+</div>
