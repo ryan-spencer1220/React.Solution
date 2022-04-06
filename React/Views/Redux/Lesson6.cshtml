@@ -1,10 +1,95 @@
-<h1>Redux Actions</h1>
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
 
-<a href="https://www.youtube.com/watch?v=FGCsuwIORb0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=36">Link One</a>
-<a href="https://www.tutorialspoint.com/redux/redux_actions.htm">Link Two</a>
-<a href="https://read.reduxbook.com/markdown/part1/04-action-creators.html">Link Three</a>
 
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <h1>Redux Actions</h1>
+  <p class="lead">Editing Data With Redux</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Submit" />
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">
+    One thing we haven't talked much about yet is how we make things happen in Redux. Sure, we covered .dispatch() but that's quite basic. We just showed how to directly dispatch an action by doing: store.dispatch({type: 'SOME_ACTION'})
+    </p>
+    <p class="lead">
+    But, frequently we'll want to dispatch something as a result of a user's click or other action. Ideally, we just want a function to call, right? Let's say, for example, we're building an online store, and there are a handful of places in the UI that show products and give you the option of adding them to your cart. Let's assume that ultimately, when clicked it should always result in dispatching the same action.
+    </p>
+    <p class="lead">
+    It may start to get a bit arduous to have to type this each time:
+    </p>
+    <p class="lead">
+    store.dispatch({ type: 'ITEM_ADDED_TO_CART', payload: 47 })
+    If you're really paying attention, you'll also remember that we said actions, ideally, should report things that happened, not make things happen. If the dispatch is the report, then what actually sends the report!?
+    </p>
+    <p class="lead">
+    Plus, for something like adding an item to a cart, this probably involves an API call of some kind, and then potentially updating a bunch of UI based on what happened. At this point, it makes no sense to repeat that logic every place we need to do the same thing.
+    </p>
+    <p class="lead">
+    What we need instead, is a function, perhaps called doAddToCart(ID) that initiates the actual API call. Then, as a side effect triggers actions that report how the request is progressing to the store.
+    </p>
+    <p class="lead">
+    That's the idea behind an "action creator."
+    </p>
+    <p class="lead">
+    Not everything is complicated; sometimes the only thing the action creator needs to do is to dispatch a single action to the store.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Redux Actions</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/FGCsuwIORb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/Redux/Lesson5"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Redux/Lesson7"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.youtube.com/watch?v=FGCsuwIORb0&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=36">Complete React Tutorial: Redux Actions</a>
+  <a href="https://www.tutorialspoint.com/redux/redux_actions.htm">Redux Actions</a>
+  <a href="https://read.reduxbook.com/markdown/part1/04-action-creators.html">Action Creators</a>
+</div>
+
