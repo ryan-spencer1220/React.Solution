@@ -37,7 +37,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson1Complete = false;
       } 
-      else if (fundamentalsOne.Lesson1Complete == false)
+      else
       {
         fundamentalsOne.Lesson1Complete = true;
       }
@@ -65,7 +65,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson2Complete = false;
       } 
-      else if (fundamentalsOne.Lesson2Complete == false)
+      else
       {
         fundamentalsOne.Lesson2Complete = true;
       }
@@ -93,7 +93,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson3Complete = false;
       } 
-      else if (fundamentalsOne.Lesson3Complete == false)
+      else
       {
         fundamentalsOne.Lesson3Complete = true;
       }
@@ -121,7 +121,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson4Complete = false;
       } 
-      else if (fundamentalsOne.Lesson4Complete == false)
+      else
       {
         fundamentalsOne.Lesson4Complete = true;
       }
@@ -149,7 +149,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson5Complete = false;
       } 
-      else if (fundamentalsOne.Lesson5Complete == false)
+      else
       {
         fundamentalsOne.Lesson5Complete = true;
       }
@@ -177,7 +177,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson6Complete = false;
       } 
-      else if (fundamentalsOne.Lesson6Complete == false)
+      else
       {
         fundamentalsOne.Lesson6Complete = true;
       }
@@ -205,7 +205,7 @@ namespace React.Controllers
       {
         fundamentalsOne.Lesson7Complete = false;
       } 
-      else if (fundamentalsOne.Lesson7Complete == false)
+      else
       {
         fundamentalsOne.Lesson7Complete = true;
       }

@@ -1,0 +1,69 @@
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+<div class="text-center p-4">
+  <h2>React Fundamentals Part One</h2>
+  <p class="lead">Props & Prop Types</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+    <div class="row justify-content-center">
+      <div class="text-center container-sm col-8 col-sm-6 rounded">
+        <div class="text center col-12">
+          @using (Html.BeginForm())
+          {
+            <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+          }
+        </div>
+      </div>
+    </div>
+  }
+} 
+else
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">Start by planning your UI. At this point, don't worry about adding or changing state. If you start adding state without planning your application first, you'll be much more likely to write bad code and end up with frustrating bugs. For this reason, it's best practice to start entirely static with function components. Build a component diagram to structure the site and parent/child relationships as well as the functionality of each component.</p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Plan & Build Your Static App</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/YJPSR9dEQV8?start=69" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsOne/Lesson2"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://reactjs.org/docs/thinking-in-react.html">Thinking In React</a>
+  <a href="https://konstantinmuenster.medium.com/how-to-plan-and-organize-a-react-project-by-building-a-weather-app-95175b11bd01">Plan & Organize Your App</a>
+  <a href="https://www.draw.io">Draw Your Component Diagram</a>
+</div>
