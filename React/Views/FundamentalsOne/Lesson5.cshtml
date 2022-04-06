@@ -1,0 +1,68 @@
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+<div class="text-center p-4">
+  <h2>React Fundamentals Part One</h2>
+  <p class="lead">Lesson 5: Adding Images</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+    <div class="row justify-content-center">
+      <div class="text-center container-sm col-8 col-sm-6 rounded">
+        <div class="text center col-12">
+          @using (Html.BeginForm())
+          {
+            <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+          }
+        </div>
+      </div>
+    </div>
+  }
+} 
+else
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">In general, adding images to a React application is pretty easy. The best way is to store your images in the <em>src</em> directory and import them using JavaScript files. The biggest benefit to this is that webpack will then minify and bundle our assets for us. This not only makes our code more efficient in the browser, but also helps us catch broken or missing images by throwing errors.</p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Importing & Positioning Images</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/mfNQ_RPegAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/FundamentalsOne/Lesson4"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsOne/Lesson6"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a class="text-center" href="https://create-react-app.dev/docs/adding-images-fonts-and-files/">Adding Images, Fonts & Files</a>
+  <a class="text-center" href="https://betterprogramming.pub/how-to-display-images-in-react-dfe22a66d5e7">Different Ways To Add Media</a>
+</div>
