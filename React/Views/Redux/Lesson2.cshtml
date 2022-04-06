@@ -10,3 +10,24 @@
 {
   <input type="submit" value="Submit" />
 }
+
+<div class="title">
+  <h1>Redux Basics</h1>
+</div>
+
+<div class="content"></div>
+
+<div class="resources">resources</div>
+
+The ones familiar with react will know that react is a component-based front end library tool that connects the various segments of the web page. In react, we use props (short for properties) in a component which allows the usage of non-static variables. With the help of props, we can pass these variables into various other components (child components) from the parent component.
+
+This brings the need for react-redux in our react application. React-redux being a state management tool makes it easier to pass these states from one component to another irrespective of their position in the component tree and hence prevents the complexity of the application.
+
+Working Procedure: When a react application holds various components in need of state from other components it becomes difficult to realize where the state should reside among these components to make it easier to maintain. React-redux provides a store which makes the state inside components easier to maintain. Along with stores, react-redux introduces actions and reducers which work simultaneously with stores to make the state more predictable. The working of the features in react-redux is explained below: 
+
+Store: It contains the state of the components which need to be passed to other components. The store makes this passing along much easier as we no longer need to maintain a state inside a parent component in order to pass the same to its children components.
+Actions:The actions part of the react-redux basically contains the different actions that are to be performed on the state present in the store.The actions included must contain the type of the action and can also contain payload(data field in the actions).
+Example: Actions of increment and decrements in a react app: 
+
+Reducers: The reducers in react-redux are the pure functions that contain the operations that need to be performed on the state. These functions accept the initial state of the state being used and the action type. It updates the state and responds with the new state. This updated state is sent back to the view components of the react to make the necessary changes. A reducer must contain the action type.
+Example: Reducer which updates the state in accordance with the action type 1st program and the 2nd program shows the snippet of creating the store which accepts the reducer.

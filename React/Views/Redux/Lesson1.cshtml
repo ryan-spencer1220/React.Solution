@@ -1,15 +1,44 @@
-@using (Html.BeginForm())
-{
-  <input type="submit" value="Complete" />
-}
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
 
-<div class="text-center">
+
+<div class="text-center p-4">
   <h2>Introduction To Redux</h2>
   <p class="lead">Why use React Redux?</p>
 </div>
 
-<section class="text-content">
-  <div class="container-md">
+@if (ViewBag.IsComplete == true)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == false)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
     <p class="lead">Redux is predictable state container for javascript applications. This means whenever there are changes within the application including both data and UI changes, those changes are contained in a single javascript object called the state. The state is often referred to as the single-source-of-truth because it is never mutated or modified, but instead recreated.
     </p>
     <p class="lead">  
@@ -26,8 +55,8 @@
   </div>
 </section>
 
-<section class="video-content bg-light">
-  <div class="container-lg">
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
     <div class="text-center">
       <h2>React & Redux Basics</h2>
     </div>
@@ -37,8 +66,16 @@
   </div>
 </section>
 
-<div class="card">
-  <h3>Additional Resources</h3>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Redux/Lesson2"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
   <a href="https://react-redux.js.org/introduction/why-use-react-redux">React Documenation: Why Use React?</a>
   <a href="https://dev.to/meddy672/react-redux-in-less-then-7-minutes-had">React - Redux In Less Then 7 Minutes</a>
   <a href="https://www.youtube.com/watch?v=D2MqT4OEgoE&ab_channel=Academind">React & Redux Basics: What & Why?</a>
