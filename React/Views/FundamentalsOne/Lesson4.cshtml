@@ -1,0 +1,77 @@
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+<div class="text-center p-4">
+  <h2>React Fundamentals Part One</h2>
+  <p class="lead">Lesson 4: Styling your React App</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+    <div class="row justify-content-center">
+      <div class="text-center container-sm col-8 col-sm-6 rounded">
+        <div class="text center col-12">
+          @using (Html.BeginForm())
+          {
+            <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+          }
+        </div>
+      </div>
+    </div>
+  }
+} 
+else
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">When you create a new application with create-react-app, two CSS files are automatically generated: index.css and App.css. The idea here is that any styles you want to apply globally go into index.css while styles you just want to apply to App.js go into App.css. However, when your React application is compiled, these will both be minified into a single CSS file. This is essentially the same as breaking a global stylesheet into many smaller files. In this case, if a child component has a similarly named CSS rule (such as h1) as a parent component, the child's rule will override the parent's rule even though the child's rule isn't imported into the parent component.</p>
+
+    <p class="lead">For that reason, be cautious when styling with external stylesheets. Here are some helpful guidelines:</p>
+    <ul>
+      <li>If your application will have any global style rules, put them in index.css.</li>
+      <li>If you use stylesheets for individual components, make sure that classes and ids very specifically pinpoint elements in that component.</li>
+      <li>Some animations and pseudo class selectors (like hover) can't be implemented with other practices so stylesheets may be an acceptable option in these use cases.</li>
+    </ul>
+    <p class="lead">Fortunately, there are several other styling methods available for React. The most common are CSS Objects, CSS-in-JS, CSS Modules, and TailwindCSS.<p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React Styling Methods</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/DXikBH-LCF4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/FundamentalsOne/Lesson3"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsOne/Lesson5"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a class="text-center" href="https://blog.logrocket.com/styling-in-react-4-ways-style-react-app/">4 Ways to Style React Apps</a>
+  <a class="text-center" href="https://www.smashingmagazine.com/2020/07/styled-components-react/">CSS-in-JS: Styled Components</a>
+  <a class="text-center" href="https://tailwindcss.com/docs/guides/create-react-app">Install Tailwind with Create-React-App</a>
+</div>
