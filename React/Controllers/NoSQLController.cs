@@ -81,16 +81,6 @@ namespace React.Controllers
       return View();
     }
 
-    public async Task<ActionResult> Lesson7()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      NoSQL noSQL = _db.NoSQLs.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = noSQL.Lesson7Complete;
-      return View();
-    }
-
     [HttpPost, ActionName("Lesson1")]
     public async Task<ActionResult> LessonOne()
     {
@@ -205,23 +195,5 @@ namespace React.Controllers
       return RedirectToAction();
     }
 
-    [HttpPost, ActionName("Lesson7")]
-    public async Task<ActionResult> LessonSeven()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      NoSQL noSQL = _db.NoSQLs.FirstOrDefault(a => a.UserId == userId );
-      if (noSQL.Lesson7Complete == true)
-      {
-        noSQL.Lesson7Complete = false;
-      } else if (noSQL.Lesson7Complete == false)
-      {
-      noSQL.Lesson7Complete = true;
-      }
-      _db.Entry(noSQL).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction();
-    }
   }
 }
