@@ -1,15 +1,15 @@
-@using System.Linq;
 @using System;
 @model React.Models.ApplicationUser;
 
+<div class="text-center p-1 pt-3 pb-0 mt-4 mb-0">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="138" height="128">
+</div>
 
-<div class="my-4 example-normal">
-    <h2>Accordion-parted (creation)</h2>
-    <p>In this example the $card-spacer-y variable is used as margin-bottom between cards. For the last card, no margin-bottom is applied.<br />(This scenario was possible in 4.0 alpha. I've made this because I had it in my previous template.)</p>
-<div class="accordion accordion-parted" id="accordionExample3">
+<div class="m-3 my-4 mt-0 pt-0 p-3  example-normal">
+<div class="accordion accordion-parted m-3 mt-0 p-3" id="accordionExample3">
 
-  <div class="card mb-3 border border-dark">
-    <div class="card-header btn btn-outline-secondary border-0 rounded-top"id="headingIntro" data-toggle="collapse" data-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
+  <div class="card mb-3 border border-dark shadow">
+    <div class="card-header btn btn-outline-secondary border-0 rounded-top accbn632-hover accbn20" id="headingIntro" data-toggle="collapse" data-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
       <h4 class="mb-0">
           <strong>Introduction</strong>
       </h4>
@@ -19,36 +19,21 @@
         <div class="text-left links-container">
           <ul>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson1", "Introduction")
+              @Html.ActionLink("What Is React?", "Lesson1", "Introduction")
               @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson2", "Introduction")
+              @Html.ActionLink("JSX and Virtual DOM", "Lesson2", "Introduction")
               @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson3", "Introduction")
+              @Html.ActionLink("Create React App", "Lesson3", "Introduction")
               @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
-            @* <li>
-              @Html.ActionLink("[Topic Here]", "Lesson4", "Introduction")
+             <li>
+              @Html.ActionLink("Components", "Lesson4", "Introduction")
               @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson5", "Introduction")
-              @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson6", "Introduction")
-              @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson6Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson7", "Introduction")
-              @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson7Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson8", "Introduction")
-              @if(ViewBag.Introduction != null && ViewBag.Introduction.Lesson8Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;} *@
             </li>
           </ul>
         </div>
@@ -56,8 +41,8 @@
     </div>
   </div>
 
-  <div class="card mb-3 border border-dark">
-    <div class="card-header btn btn-outline-secondary border-0 rounded-top"id="headingFundamentalOne" data-toggle="collapse" data-target="#collapseFundamentalOne" aria-expanded="false" aria-controls="collapseFundamentalOne">
+  <div class="card mb-3 border border-dark shadow">
+    <div class="card-header btn btn-outline-secondary border-0 rounded-top accbn632-hover accbn20" id="headingFundamentalOne" data-toggle="collapse" data-target="#collapseFundamentalOne" aria-expanded="false" aria-controls="collapseFundamentalOne">
       <h4 class="mb-0">
           <strong>Fundamentals (Part 1)</strong>
       </h4>
@@ -104,8 +89,8 @@
     </div>
   </div>
 
-  <div class="card mb-3 border border-dark">
-    <div class="card-header btn btn-outline-secondary border-0 rounded-top" id="headingFundamentalTwo" data-toggle="collapse" data-target="#collapseFundamentalTwo" aria-expanded="false" aria-controls="collapseFundamentalTwo">
+  <div class="card mb-3 border border-dark shadow">
+    <div class="card-header btn btn-outline-secondary border-0 rounded-top accbn632-hover accbn20" id="headingFundamentalTwo" data-toggle="collapse" data-target="#collapseFundamentalTwo" aria-expanded="false" aria-controls="collapseFundamentalTwo">
       <h4 class="mb-0">
           <strong>Fundamentals (Part 2)</strong>
       </h4>
@@ -114,29 +99,26 @@
       <div class="card-body text-center">
         <div class="text-left links-container">
           <ul>
-            <li><Strong>State (5 Subtopics)</Strong>
-              <ul>
-                <li>
-                  @Html.ActionLink("Overview", "Lesson1", "FundamentalsTwo") 
-                  @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-                </li>
-                <li>
-                  @Html.ActionLink("Shared vs Local State", "Lesson2", "FundamentalsTwo")
-                  @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-                </li>
-                <li>
-                  @Html.ActionLink("Classes vs Stateless Functions", "Lesson3", "FundamentalsTwo")
-                  @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-                </li>
-                <li>
-                  @Html.ActionLink("Unidirectional Data Flow", "Lesson4", "FundamentalsTwo")
-                  @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-                </li>
-                <li>
-                  @Html.ActionLink("Updating with Events", "Lesson5", "FundamentalsTwo")
-                  @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-                </li>
-              </ul>
+            <li>
+              @Html.ActionLink("Overview", "Lesson1", "FundamentalsTwo") 
+              @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+            </li>
+            <li>
+              @Html.ActionLink("Shared vs Local State", "Lesson2", "FundamentalsTwo")
+              @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+            </li>
+            <li>
+              @Html.ActionLink("Classes vs Stateless Functions", "Lesson3", "FundamentalsTwo")
+              @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+            </li>
+            <li>
+              @Html.ActionLink("Unidirectional Data Flow", "Lesson4", "FundamentalsTwo")
+              @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+            </li>
+            <li>
+              @Html.ActionLink("Updating with Events", "Lesson5", "FundamentalsTwo")
+              @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+            </li>
             </li>
             <li>
               @Html.ActionLink("UUID", "Lesson6", "FundamentalsTwo")
@@ -146,18 +128,14 @@
               @Html.ActionLink("Re-using Components", "Lesson7", "FundamentalsTwo")
               @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson7Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
-            @* <li>
-              @Html.ActionLink("CRUD", "Lesson8", "FundamentalsTwo")
-              @if(ViewBag.FundamentalsTwo != null && ViewBag.FundamentalsTwo.Lesson8Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li> *@
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="card mb-3 border border-dark">
-    <div class="card-header btn btn-outline-secondary border-0 rounded-top"id="headingRedux" data-toggle="collapse" data-target="#collapseRedux" aria-expanded="false" aria-controls="collapseRedux">
+  <div class="card mb-3 border border-dark shadow">
+    <div class="card-header btn btn-outline-secondary border-0 rounded-top accbn632-hover accbn20" id="headingRedux" data-toggle="collapse" data-target="#collapseRedux" aria-expanded="false" aria-controls="collapseRedux">
       <h4 class="mb-0">
           <strong>Redux</strong>
       </h4>
@@ -167,45 +145,41 @@
         <div class="text-left links-container">
           <ul>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson1", "Redux")
+              @Html.ActionLink("Redux Introduction", "Lesson1", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson2", "Redux")
+              @Html.ActionLink("Redux Terminology", "Lesson2", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson3", "Redux")
+              @Html.ActionLink("Installing & Setting Up Redux", "Lesson3", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson4", "Redux")
+              @Html.ActionLink("Redux Stores", "Lesson4", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson5", "Redux")
+              @Html.ActionLink("Redux Reducers", "Lesson5", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson6", "Redux")
+              @Html.ActionLink("Redux Actions", "Lesson6", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson6Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson7", "Redux")
+              @Html.ActionLink("Advanced Redux Topics", "Lesson7", "Redux")
               @if(ViewBag.Redux != null && ViewBag.Redux.Lesson7Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
-            @* <li>
-              @Html.ActionLink("[Topic Here]", "Lesson8", "Redux")
-              @if(ViewBag.Redux != null && ViewBag.Redux.Lesson8Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li> *@
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="card mb-3 border border-dark">
-    <div class="card-header btn btn-outline-secondary border-0 rounded-top"id="headingNoSQL" data-toggle="collapse" data-target="#collapseNoSQL" aria-expanded="false" aria-controls="collapseNoSQL">
+  <div class="card mb-3 border border-dark shadow">
+    <div class="card-header btn btn-outline-secondary border-0 rounded-top accbn632-hover accbn20" id="headingNoSQL" data-toggle="collapse" data-target="#collapseNoSQL" aria-expanded="false" aria-controls="collapseNoSQL">
       <h4 class="mb-0">
           <strong>NoSQL</strong>
       </h4>
@@ -215,45 +189,37 @@
         <div class="text-left links-container">
           <ul>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson1", "NoSQL")
+              @Html.ActionLink("SQL vs. NoSQL", "Lesson1", "NoSQL")
               @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson2", "NoSQL")
+              @Html.ActionLink("Getting Started With Firebase", "Lesson2", "NoSQL")
               @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson3", "NoSQL")
+              @Html.ActionLink("React Hooks", "Lesson3", "NoSQL")
               @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson4", "NoSQL")
+              @Html.ActionLink("Firestore", "Lesson4", "NoSQL")
               @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson5", "NoSQL")
+              @Html.ActionLink("React Router", "Lesson5", "NoSQL")
               @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson6", "NoSQL")
+              @Html.ActionLink("Styled-Components", "Lesson6", "NoSQL")
               @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson6Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson7", "NoSQL")
-              @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson7Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            @* <li>
-              @Html.ActionLink("[Topic Here]", "Lesson8", "NoSQL")
-              @if(ViewBag.NoSQL != null && ViewBag.NoSQL.Lesson8Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li> *@
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="card mb-3 border border-dark">
-    <div class="card-header btn btn-outline-secondary border-0 rounded-top"id="headingApi" data-toggle="collapse" data-target="#collapseApi" aria-expanded="false" aria-controls="collapseApi">
+  <div class="card mb-3 border border-dark shadow">
+    <div class="card-header border-0 rounded-top accbn632-hover accbn20" id="headingApi" data-toggle="collapse" data-target="#collapseApi" aria-expanded="false" aria-controls="collapseApi">
       <h4 class="mb-0">
           <strong>API's</strong>
       </h4>
@@ -263,62 +229,86 @@
         <div class="text-left links-container">
           <ul>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson1", "Api")
+              @Html.ActionLink("Making an API Call with fetch()", "Lesson1", "Api")
               @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson2", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+              @Html.ActionLink("Redux Middleware", "Lesson2", "Api")
+              @if(ViewBag.Api != null && ViewBag.Api.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson3", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+              @Html.ActionLink("Async Actions with Redux Thunk", "Lesson3", "Api")
+              @if(ViewBag.Api != null && ViewBag.Api.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson4", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+              @Html.ActionLink("Building an API with React & Redux", "Lesson4", "Api")
+              @if(ViewBag.Api != null && ViewBag.Api.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson5", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson6", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson7", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson8", "Api")
-              @if(ViewBag.Api != null && ViewBag.Api.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
+              @Html.ActionLink("Further Exploration: Hooks", "Lesson5", "Api")
+              @if(ViewBag.Api != null && ViewBag.Api.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  @{
+    ViewBag.Ratio = ((double)@ViewBag.NumComplete / (double)@ViewBag.NumLessons) * 100; 
+  }
+  <div class="text-center">
+    <p class="m-1"> <h5>Lessons Completed = @ViewBag.NumComplete / @ViewBag.NumLessons</h5> </p>
 
- 
-      @{
-      
-      ViewBag.Ratio =  ((double)@ViewBag.NumComplete / (double)@ViewBag.NumLessons) * 100; }
-      <div class="progress">
-      @{ 
-      string attributes = string.Concat("width: " , ViewBag.Ratio.ToString() , "14");}
-          <div class="progress-bar" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style=@attributes></div>
+    <div class="progress" style="height:27px">
+        <div id="course-progress" class="progress-bar bg-danger accbn632-hover accbn22" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" style="height:27px"> 
+          <p class="progress-text text-right mr-3 font-weight-bolder mb-0">
+            @Math.Round(@ViewBag.Ratio)%
+          </p>  
+        </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+  const pctComplete = @ViewBag.Ratio
+  $("#course-progress").css("width", @ViewBag.Ratio+"%")
+</script>
+
+</div>
+</div>
+
+    <!-- Wrap In If Statement (Display if all modules have been completed) -->
+    <section class="bg-light">
+      <div class="container p-5 shadow-lg rounded">
+        <div class="text-center">
+          <h2>You've Completed All Six Modules!</h2>
+          <p>Click the button below to view your certificate of completion</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <button class="bn632-hover bn20" data-bs-toggle="modal" data-bs-target="#reg-modal">
+              View Certificate
+            </button>
+          </div>
+        </div>
       </div>
-      <p>@attributes</p>
-      @* <div class='eventDay @(e.Value.Count<1?"noEvents":"")'></div> *@
-    
+    </section>
 
-@* id="@("box"+number)" *@
-@* $"home.json?api-key={apiKey}" *@
+    <div class="modal fade bd-example-modal-lg" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div style="position: absolute; width: 100%; height: 100%; padding-top: 38.5%;
+          padding-bottom: 45%; overflow: hidden; will-change: transform;">
+            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAE9JDoR05w&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End if statement -->
 
-  <p> Total number of Lessons = @ViewBag.NumLessons </p>
-  <p> Number of Lessons Completed = @ViewBag.NumComplete </p>
-  <p> Ratio = @ViewBag.Ratio </p>
-
-</div>
-</div>

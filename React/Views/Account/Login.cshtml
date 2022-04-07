@@ -3,47 +3,53 @@
 
 @using (Html.BeginForm())
 {
-    <section id="login-page">
-      <div class="container-lg pt-5 m-5 shadow-lg rounded">
-        <div class="text-center">
-          <h2>Login</h2>
-          <p class="lead">Login To Start Learning Aboout React!</p>
-        </div>
-        <div class="row justify-content-center my-5">
-          <div class="col-lg-6">
-            <form>
-              <label for="email" class="form-label">Email Address:</label>
-              <div class="input-group mb-4">
-                <span class="input-group-text">
-                  <i class="bi bi-envelope-fill"></i>
+  <section id="login-page">
+    <div class="container-lg pt-5 m-5 shadow-lg rounded">
+      <div class="text-center">
+        <h2>Login</h2>
+        <p class="lead">Login To Start Learning Aboout React!</p>
+      </div>
+      <div class="row justify-content-center my-5">
+        <div class="col-lg-6">
+          <form>
+            <label for="email" class="form-label">Email Address:</label>
+            <div class="input-group mb-4">
+              <span class="input-group-text">
+                <i class="bi bi-envelope-fill"></i>
+              </span>
+                @Html.TextBoxFor(m=> m.Email, new { @class="form-control" })
+              <span class="input-group-text">
+                <span class="tt" data-bs-placement="bottom" title="Please enter your email address">
+                  <i class="bi bi-question-circle text-muted"></i>
                 </span>
-                  @Html.TextBoxFor(m=> m.Email, new { @class="form-control" })
-                <span class="input-group-text">
-                  <span class="tt" data-bs-placement="bottom" title="Please enter your email address">
-                    <i class="bi bi-question-circle text-muted"></i>
-                  </span>
-                </span>
-              </div>
+              </span>
+            </div>
 
-              <label for="password" class="form-label">Password:</label>
-              <div class="input-group mb-4">
-                <span class="input-group-text">
-                  <i class="bi bi-file-lock2-fill"></i>
+            <label for="password" class="form-label">Password:</label>
+            <div class="input-group mb-4">
+              <span class="input-group-text">
+                <i class="bi bi-file-lock2-fill"></i>
+              </span>
+                @Html.PasswordFor(m=> m.Password, new { @class="form-control" }) 
+              <span class="input-group-text">
+                <span class="tt" data-bs-placement="bottom" title="Please enter your password">
+                  <i class="bi bi-question-circle text-muted"></i>
                 </span>
-                  @Html.PasswordFor(m=> m.Password, new { @class="form-control" }) 
-                <span class="input-group-text">
-                  <span class="tt" data-bs-placement="bottom" title="Please enter your password">
-                    <i class="bi bi-question-circle text-muted"></i>
-                  </span>
-                </span>
-              </div>
+              </span>
+            </div>
 
-              <div class="mb-4 text-center">
-                <input type="submit" value="Log In" class="bn632-hover bn20" />
-              </div>
-            </form>
+            <div class="mb-4 text-center">
+              <input type="submit" value="Log In" class="bn632-hover bn20" />
+            </div>
+          </form>
+          @* <div class="mb-4 text-center">
+              <a href="account/register"><button class="bn632-hover bn20">Register</button></a>
+          </div> *@
+          <div class="mb-4 text-center">
+            @Html.ActionLink("Don't have a login? Register here", "Register")
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 }
