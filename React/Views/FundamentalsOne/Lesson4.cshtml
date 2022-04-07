@@ -25,22 +25,22 @@
 } 
 else
 {
-<div class="row justify-content-center">
-  <div class="text-center container-sm col-8 col-sm-6 rounded">
-    <div class="text center col-12">
-      @using (Html.BeginForm())
-      {
-        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
-      }
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+        @using (Html.BeginForm())
+        {
+          <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+        }
+      </div>
     </div>
   </div>
-</div>
 }
 
 <section class="text-content p-3 m-3">
   <div class="container-md p-3 m-3">
     <p class="lead">When you create a new application with create-react-app, two CSS files are automatically generated: index.css and App.css. The idea here is that any styles you want to apply globally go into index.css while styles you just want to apply to App.js go into App.css. However, when your React application is compiled, these will both be minified into a single CSS file. This is essentially the same as breaking a global stylesheet into many smaller files. In this case, if a child component has a similarly named CSS rule (such as h1) as a parent component, the child's rule will override the parent's rule even though the child's rule isn't imported into the parent component.</p>
-
+    
     <p class="lead">For that reason, be cautious when styling with external stylesheets. Here are some helpful guidelines:</p>
     <ul>
       <li>If your application will have any global style rules, put them in index.css.</li>

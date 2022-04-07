@@ -185,33 +185,5 @@ namespace React.Controllers
       _db.SaveChanges();
       return RedirectToAction();
     }
-
-    public async Task<ActionResult> Lesson7()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson7Complete;
-      return View();
-    }
-
-    [HttpPost, ActionName("Lesson7")]
-    public async Task<ActionResult> LessonSeven()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      if (fundamentalsOne.Lesson7Complete == true)
-      {
-        fundamentalsOne.Lesson7Complete = false;
-      } 
-      else
-      {
-        fundamentalsOne.Lesson7Complete = true;
-      }
-      _db.Entry(fundamentalsOne).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction();
-    }
   }
 }

@@ -25,21 +25,21 @@
 } 
 else
 {
-<div class="row justify-content-center">
-  <div class="text-center container-sm col-8 col-sm-6 rounded">
-    <div class="text center col-12">
-      @using (Html.BeginForm())
-      {
-        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
-      }
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+        @using (Html.BeginForm())
+        {
+          <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+        }
+      </div>
     </div>
   </div>
-</div>
 }
 
 <section class="text-content p-3 m-3">
   <div class="container-md p-3 m-3">
-    <p class="lead">React components accept properties (known as props) passed down from a parent using JSX tags. Because React components are functions, these props are actually just a special kind of argument. Props are read-only.</p>
+    <p class="lead">React components accept properties (known as props) passed down from a parent using JSX tags. Since React components are functions, these props are actually just a special kind of argument.</p>
     <p class="lead">In a more complex application, we might find ourselves passing the wrong type of props data to a child component. It's best practice to assign strict data types to props with a special propTypes property. When we assign strict data types, we are simply stating that a variable (in this case, a property) must be of a certain type. If they aren't, our application will throw an error.</p>
   </div>
 </section>
