@@ -1,14 +1,14 @@
 <div class="text-center p-4">
-  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
 </div>
 
 
 <div class="text-center p-4">
   <h2>CRUD</h2>
-  <p class="lead">The 4 stages of programming grief</p>
+  <p class="lead">CRUD is back!</p>
 </div>
 
-@if (ViewBag.IsComplete == true)
+@if (ViewBag.IsComplete == false)
 {
   @using (Html.BeginForm())
   {
@@ -23,7 +23,7 @@
   </div>
 </div>
   }
-} else if (ViewBag.IsComplete == false)
+} else if (ViewBag.IsComplete == true)
 {
 <div class="row justify-content-center">
   <div class="text-center container-sm col-8 col-sm-6 rounded">
@@ -40,18 +40,17 @@
 <section class="text-content p-3 m-3">
   <div class="container-md p-3 m-3">
     <p class="lead">  
-    As stated <a href="https://medium.com/edonec/state-in-react-an-overview-a182675cee2c">in this Medium article</a>, State is used to represent the current status of an object:
+      Create, Read, Update, Delete. 
 
-    <blockquote class="px-5 p-3 px-3 mx-5 p-3 border border-light">State is a plan JavaScript object used by React to represent an information about the component's current situation. It’s managed in the component (just like any variable declared in a function). The difference is while a “normal” variable “disappears” when their function exits, the state variables are preserved by React.</blockquote>
+      These are words you'll be hearing a lot of in your programming career. These are the four fundamental operations programmers perform on databases and collections of data. Master the concepts here using React and you're one step closer to your coding nirvana. 
+
+      <blockquote class="px-5 p-3 px-3 mx-5 p-3 border border-light">State is a plan JavaScript object used by React to represent an information about the component's current situation. It’s managed in the component (just like any variable declared in a function). The difference is while a “normal” variable “disappears” when their function exits, the state variables are preserved by React.</blockquote>
     </p>
     <p class="lead">
-    State tells the application when a component should be re-rendered. <a href="https://medium.com/edonec/state-in-react-an-overview-a182675cee2c">When the state object changes, the component re-renders</a>. In this way, not everything on screen must be refreshed in order to make small changes to parts of your page when 
+      If you want extra practice beyond the <a href="http://LearnHowToProgram.com">LearnHowToProgram.com</a> React curriculum, try this tutorial for building a Simple CRUD app from Unimedia.tech <a href="https://www.unimedia.tech/2021/11/30/build-a-simple-crud-app-using-react-and-node/">HERE</a>. 
     </p>
     <p class="lead">
-    Both Geeks for Geeks and Tim Smith have more in-depth articles outlining the difference between Props and State and going into greater depth. You can find their articles <a href="https://www.iamtimsmith.com/blog/this-state-how-to-use-state-in-react">here</a> and <a href="https://www.geeksforgeeks.org/reactjs-state-react/">here</a>. 
-    </p>
-    <p class="lead">
-    Check out the video below for a great explanation of the basics. 
+      In an entirely unexpected turn, we've included a tutorial video below. 
     </p>
   </div>
 </section>
@@ -62,7 +61,7 @@
       <h2>React CRUD tutorial</h2>
     </div>
     <div class="row justify-content-center my-5">
-        <iframe width="760" height="515" src="https://www.youtube.com/embed/re3OIOr9dJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/re3OIOr9dJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -71,7 +70,7 @@
 <div class="row justify-content-center my-5">
   <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
     <a href="/FundamentalsTwo/Lesson6"><button class="bn632-hover bn20">Previous Lesson</button></a>
-    <a href="/home/overview"><button class="bn632-hover bn20">Next Lesson</button></a>
+    <a href="/home/overview"><button class="bn632-hover bn20">Dashboard</button></a>
   </div>
 </div>
 
