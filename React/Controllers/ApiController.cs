@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace React.Controllers
 {
+  [Authorize]
   public class ApiController : Controller
   {
     private readonly ReactContext _db;
