@@ -36,7 +36,7 @@ _Learn To React is a C# web application to serve as a tutorial companion to [lea
 
 - _clone repository from https://github.com/ryan-spencer1220/React.Solution.git_
 - _navigate to the project directory in your terminal/command line_
-- _navigate to the subdirectory Factory and enter `dotnet restore` to install project dependencies_
+- _navigate to the subdirectory React and enter `dotnet restore` to install project dependencies_
 
 #### To Create appsettings.json
 
@@ -56,12 +56,12 @@ _Learn To React is a C# web application to serve as a tutorial companion to [lea
 #### To Create Database using Migrations
 
 - _navigate to the project directory in your terminal/command line_
-- _navigate to the subdirectory Factory and enter `dotnet ef database update` to create a new local database for the project_
+- _navigate to the subdirectory React and enter `dotnet ef database update` to create a new local database for the project_
 - _the database will take the name specified in your `appsettings.json` file and can be viewed using MySQL_
 
 #### To Run the Web Application
 
-- _navigate to the subdirectory Factory and enter `dotnet run` for a snapshot server or `dotnet watch run` for a live updating server for the application_
+- _navigate to the subdirectory React and enter `dotnet run` for a snapshot server or `dotnet watch run` for a live updating server for the application_
 - _access the server in your browser by entering `localhost:5000` into your navigation bar_
 - _click the hyperlinks and submit forms to navigate between the views_
 - _enter `ctrl` + `c` for Windows or `command` + `.` for Mac in your terminal/command line to stop the server_
@@ -76,8 +76,4 @@ _MIT License_
 
 ## Contact Information
 
-alexanderadamovic@gmail.com
-ryan.spencer1220@gmail.com
-jessb.epicodus@gmail.com
-ericcrudup@msn.com
-jase.seeley@gmail.com
+alexanderadamovic@gmail.com | ryan.spencer1220@gmail.com | jessb.epicodus@gmail.com | Cruduper@users.noreply.github.com | jase.seeley@gmail.com | rilryshimp@gmail.com
