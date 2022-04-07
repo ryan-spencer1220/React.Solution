@@ -76,4 +76,4 @@ _MIT License_
 
 ## Contact Information
 
-alexanderadamovic@gmail.com | ryan.spencer1220@gmail.com | jessb.epicodus@gmail.com | Cruduper@users.noreply.github.com | jase.seeley@gmail.com
+alexanderadamovic@gmail.com | ryan.spencer1220@gmail.com | jessb.epicodus@gmail.com | Cruduper@users.noreply.github.com | jase.seeley@gmail.com | rilryshimp@gmail.com
