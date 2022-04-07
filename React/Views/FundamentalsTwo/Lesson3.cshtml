@@ -1,0 +1,88 @@
+<div class="text-center p-4">
+  <img src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>Class and Stateless Component Differences</h2>
+  <p class="lead">Vanilla Javascript vs React</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">  
+    One important aspect of React to get an understanding of early on is the differences between what is referred to as functional or "Stateless Function", and a React class component. The basic difference is easy to explain, a functional component has no State associated with it. These are the basic objects we worked with extensively in javascript before starting to learn React. 
+
+   
+    </p>
+    <p class="lead">
+      Mosh Hamedani from Programming Mosh states:
+      <blockquote class="px-5 p-3 px-3 mx-5 p-3 border border-light font-italic">The literal difference is that one has state, and the other doesn’t. That means the stateful components are keeping track of changing data, while stateless components print out what is given to them via props, or they always render the same thing.</blockquote>
+
+      You can find the full article <a href="https://programmingwithmosh.com/javascript/stateful-stateless-components-react/">here</a>.
+    </p>
+    <p class="lead">
+      Geeksforgeeks has a <a href="https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/">great article</a> which gives concise code examples of each type of component and has a compare and contrast table. 
+    </p>
+    <p class="lead">
+    Check out the video below for further explanation. 
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Class Components vs Functional Components</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/yc6elaGOoGQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/FundamentalsTwo/Lesson2"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsTwo/Lesson4"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://programmingwithmosh.com/javascript/stateful-stateless-components-react/">Programming with Mosh - Stateful and Stateless components</a>
+  <a href="https://itnext.io/react-component-class-vs-stateless-component-e3797c7d23ab?gi=7b3b78f13bde">Itnext - React component class vs stateless component</a>
+  <a href="https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components-in-react/">G4G - Differences Between Functional and Class Components</a>
+</div>
+
+

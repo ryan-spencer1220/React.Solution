@@ -1,27 +1,91 @@
-@{
-  Layout = "_Layout";
-}
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
 
-@model React.Models.Introduction
 
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <h2>Introduction to React: Lesson One</h2>
+  <p class="lead">What is React?</p>
+</div>
+
+@if (ViewBag.IsComplete == true)
 {
-  <input type="submit" value="Submit" />
+  @using (Html.BeginForm())
+  {
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+    }
+    </div>
+  </div>
+</div>
+  }
+} else if (ViewBag.IsComplete == false)
+{
+<div class="row justify-content-center">
+  <div class="text-center container-sm col-8 col-sm-6 rounded">
+    <div class="text center col-12">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+    }
+    </div>
+  </div>
+</div>
 }
 
-<h1>Welcome to React</h1>
-
-<h2>Resources to get your started:</h2>
-<a href="">Link One</a>
-<a href="">Link Two</a>
-<a href="">Link Three</a>
-<a href="">Link Four</a>
-
-
-<h1>Intro To React : What is React?</h1>
-
-<p>React is a Javascript Library for building user interfaces.
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">React is a Javascript Library for building user interfaces.
 Developed by Facebook, and released in 2013.</p>
+    <p class="lead">  
+    JavaScript libraries are collections of pre-written JavaScript code that can be used for common JS tasks. JQuery is an exampple of a Javascript Library that we've used before.</p>
+    <p class="lead">
+    Unlike JQuery, React is unique as it specializes in what's called Frontend programming. This means we can use React to more efficiently build things like on-screen menus, search bars, buttons, and anything else someone interacts with to use a website or app. Before React, developers were stuck building UIs by hand which takes much more time and creates more opportunities for errors and bugs.
+    </p>
+    <p class="lead">
+    Why Learn React?
+    </p>
+    <p class="lead">
+    Once you know how to use React, you can easily jump into React Native and start building mobile apps! Knowing this javascript UI Library is one of the most in-demand skills for front end developers today.
+    </p>
+  </div>
+</section>
 
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React in 100 Seconds</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=Tn6-PIqc4UM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React JS Explained</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=s2skans2dP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Introduction/Lesson2"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://reactjs.org/">ReactJS.org</a>
+  <a href="https://skillcrush.com/blog/what-is-react-js/">What Is React JS?</a>
+</div>

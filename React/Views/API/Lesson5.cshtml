@@ -1,4 +1,118 @@
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>React with APIs</h2>
+  <p class="lead">Further Exploration: Hooks</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Mark Complete" />
+  @using (Html.BeginForm())
+  {
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+      }
+      </div>
+    </div>
+  </div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+      </div>
+    </div>
+  </div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">React hooks are extremely powerful and convenient tools. They allow us to use state in function components without needing to turn them into class components. This keeps our code cleaner and easier to read. It can also help us avoid prop drilling as well.
+    </p>
+    <p class="lead">useEffect: React provides this built-in hook. It allows us to have side effects in function components. For instance, we could use this hook for data fetching such as making an API call. Try incorporating a useEffect hook in your API project for this section.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Learn useEffect In 13 Minutes</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=0ZJgIjIuY7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">useDispatch: The React Redux library provides this hook. It allows us to dispatch an action from a function component. Let's say, for instance, that we want a button click in a function component to update a piece of Redux state. There's no need to use props to drill down from a parent class component. Try useDispatch instead! Check out the React Redux Hooks documentation for more information. 
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React Redux Tutorials - 21 - useDispatch Hook</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=a3iV5d8Q2-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">useContext: React provides this built-in hook to access the Context API. The Context API allows a React application to have global state - and the useContext hook can be used to access that state. It should only be used when data is needed by many different components - and as you may guess, it should be used sparingly. While it's not a replacement for Redux, it can sometimes be used as a substitute 
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Learn useContext In 13 Minutes</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=5LrDIWkK_Bc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">In addition to the hooks above, there are many smaller libraries that offer custom hooks as well. <a href="https://github.com/rehooks/awesome-react-hooks">Check out this excellent list of resources on hooks</a>, which includes tutorials and links to various custom hooks. Again, this is just the tip of the iceberg. You can even create your own custom hooks. Check out the React documentation on Building Your Own Hooks for more. This is an excellent opportunity to create another portfolio piece and learn more about hooks in the process.
+    </p>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/api/lesson4"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/home/overview"><button class="bn632-hover bn20">Dashboard</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/further-exploration-react-hooks">Learn How to Program: React - React with APIs - Lesson 15: Further Exploration: React Hooks</a>
+  <a href="https://github.com/rehooks/awesome-react-hooks">Awesome React Hooks Resources</a>
+  <a href="https://reactjs.org/docs/hooks-intro.html">Hooks Documenation</a>
+  <a href="https://www.youtube.com/watch?v=0ZJgIjIuY7U">Learn useEffect In 13 Minutes</a>
+  <a href="https://www.youtube.com/watch?v=a3iV5d8Q2-8">React Redux Tutorials - 21 - useDispatch Hook</a>
+  <a href="https://www.youtube.com/watch?v=5LrDIWkK_Bc">Learn useContext In 13 Minutes</a>
+</div>

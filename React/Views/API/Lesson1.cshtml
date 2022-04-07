@@ -1,4 +1,76 @@
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>React with APIs</h2>
+  <p class="lead">Making an API Call with fetch()</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Mark Complete" />
+  @using (Html.BeginForm())
+  {
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+      }
+      </div>
+    </div>
+  </div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+      </div>
+    </div>
+  </div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">What is the Fetch API?  fetch() is a mechanism that lets you make simple Asynchronous calls with JavaScript. When we talk about APIs, we also need to talk about endpoints. An endpoint is simply a unique URL you call to interact with another system.Let's assume that we are making a request to an external API to get some data. For this, we'll use a simple GET request.  Simply call fetch() with the endpoint URL as the argument.
+    </p>
+    <p class="lead">Ultimately, you'll want to get the response body. But the response object contains quite a bit of information beyond the body, including the status code, headers, and more information. Note that the fetch API returns a promise. Because of this, you need to nest a then() method to handle the resolution. Learn more about promises here.The data returned from the API is not usually in a useable form. So you'll need to convert the data to a form which your JavaScript can operate with. Thankfully, you can use the json() method to do that.
+    </p>
+    <p class="lead">Once you move beyond GET requests, you'll need to set a few more options. So far, you have only supplied a single argument to fetch() — the URL endpoint. For a post request, you'll need to pass an object of configuration options as a second argument. The optional object can take a lot of different parameters. In this case, include only the most necessary information. Because you're sending a POST request, you'll need to declare that you're using the POST method. You'll also need to pass some data to actually create the new blog post. Since you're sending JSON data, you'll need to set a header of Content-Type set to application/json. Finally, you'll need the body, which will be a single string of JSON data.
+    </p>
+    <p class="lead">If your request is successful, you'll get a response body containing the blog post object along with a new ID. The response will vary depending on how the API is set up. Finally, you should note that endpoints may change with time and API's may be restructured. So you should put all your fetch calls together for easier access.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Making an API Call With fetch()</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=cuEtnrL9-H0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/home/overview"><button class="bn632-hover bn20">Dashboard</button></a>
+    <a href="/api/lesson2"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/making-an-api-call-with-fetch">Learn How to Program: React - React with APIs - Lesson 2: Making an API Call with fetch()</a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch() API  Documenation</a>
+  <a href="https://www.youtube.com/watch?v=cuEtnrL9-H0">Learn Fetch API In 6 Minutes</a>
+</div>

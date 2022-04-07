@@ -1,24 +1,88 @@
 @using React.ViewModels
 @model RegisterViewModel
 
-<h2>Register a new user</h2>
-<hr />
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
-    @Html.LabelFor(user => user.FirstName)
-    @Html.TextBoxFor(user=> user.FirstName)
+    <section id="register">
+      <div class="container-lg p-5 mt-5 shadow-lg rounded">
+        <div class="text-center">
+          <h2>Register</h2>
+          <p class="lead">Sign Up For Free!</p>
+        </div>
+        <div class="row justify-content-center my-5">
+          <div class="col-lg-6">
+            <form>
+              <label for="email" class="form-label">First Name:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-person-fill"></i>
+                </span>
+                  @Html.TextBoxFor(user=> user.FirstName, new { @class="form-control" })
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Enter your first name">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    @Html.LabelFor(user => user.LastName)
-    @Html.TextBoxFor(user=> user.LastName)
+              <label for="email" class="form-label">Last Name:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-person-fill"></i>
+                </span>
+                  @Html.TextBoxFor(user=> user.LastName, new { @class="form-control" })
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Enter your last name">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    @Html.LabelFor(user => user.Email)
-    @Html.TextBoxFor(user=> user.Email)
+              <label for="email" class="form-label">Email Address:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
+                  @Html.TextBoxFor(user=> user.Email, new { @class="form-control" })
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Please enter an email address">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    @Html.LabelFor(user=> user.Password)
-    @Html.PasswordFor(user=> user.Password)
+              <label for="password" class="form-label">Password:</label>
+              <div class="input-group mb-4">
+                <span class="input-group-text">
+                  <i class="bi bi-file-lock2-fill"></i>
+                </span>
+                  @Html.PasswordFor(user=> user.Password, new { @class="form-control" }) 
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    @Html.LabelFor(user=> user.ConfirmPassword)
-    @Html.PasswordFor(user=> user.ConfirmPassword)
+              <label for="password" class="form-label">Confirm Password:</label>
+              <div class="input-group mb-5">
+                <span class="input-group-text">
+                  <i class="bi bi-file-lock2-fill"></i>
+                </span>
+                  @Html.PasswordFor(user=> user.ConfirmPassword, new { @class="form-control" })
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="bottom" title="Also pretty self explanatory...">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+              </div>
 
-    <input type="submit" value="Register" />
+              <div class="text-center">
+                <input type="submit" value="Register" class="bn632-hover bn20" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 }

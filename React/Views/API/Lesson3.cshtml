@@ -1,4 +1,80 @@
-@using (Html.BeginForm())
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+
+<div class="text-center p-4">
+  <h2>React with APIs</h2>
+  <p class="lead">Async Actions with Redux Thunk</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
 {
-  <input type="submit" value="Mark Complete" />
+  @using (Html.BeginForm())
+  {
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+      }
+      </div>
+    </div>
+  </div>
+  }
+} else if (ViewBag.IsComplete == true)
+{
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+      @using (Html.BeginForm())
+      {
+        <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+      }
+      </div>
+    </div>
+  </div>
 }
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">In order to use Redux Thunk, an asynchronous action needs to return an inner function. This inner (anonymous) function can take two parameters: the store's dispatch and getState methods. We will always need the first parameter - otherwise, we wouldn't be able to dispatch reducer actions within our async action, which would defeat the purpose of using Redux Thunk in the first place. However, we'll only use the getState parameter if we need access to state from the Redux store. We don't need the getState parameter in this application because our async action doesn't need access to Redux state. However, you may well find yourself creating async actions that need to use Redux state in your own applications. If so, remember that you need to pass in the store's getState method to access it. 
+    </p>
+    <p class="lead">  
+    Before we make our API call, we'll need to dispatch the REQUEST_HEADLINES action. Note that we have our handy requestHeadlines action creator to make our code a little cleaner. This will update the store's state so isLoading is set to true.
+    </p>
+    <p class="lead">
+    Next, we use fetch() to make our API call. If the call is successful, we dispatch another action. The getHeadlinesSuccess() action creator takes the response's results as an argument. These are the daily headlines which we want to pass as a payload into the GET_HEADLINES_SUCCESS action. When this action is triggered, our store will be updated: isLoading will be set to false and headlines will be updated to the response's payload. If there's an error, a different action will be dispatched. The getHeadlinesFailure() action creator will trigger the GET_HEADLINES_FAILURE action - and pass the error from the API response along to the Redux store.
+    </p>
+    <p class="lead">
+    That's all there is to an asynchronous action handled by Redux Thunk. It's a function that returns another function. That function takes up to two parameters - dispatch and getState. We can then dispatch pure reducer actions as needed within our async action - or even access the state of the store with getState.
+    </p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>React Redux Tutorials - 12 - Async Actions</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=yGyj0mSfVuk&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=12" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/api/lesson2"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/api/lesson4"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a href="https://www.learnhowtoprogram.com/react/react-with-apis/async-actions-with-redux-thunk">React - React with APIs - Lesson 6: Async Actions with Redux Thunk</a>
+  <a href="https://redux.js.org/usage/writing-logic-thunks">React Thunk Documentation</a>
+  <a href="https://www.youtube.com/watch?v=yGyj0mSfVuk&list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK&index=12">React Redux Tutorials - 12 - Async Action</a>
+</div>
