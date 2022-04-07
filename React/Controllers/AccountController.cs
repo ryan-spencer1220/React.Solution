@@ -16,7 +16,6 @@ namespace React.Controllers {
       _signInManager = signInManager;
       _db = db;
     }
-
     public async Task<ActionResult> Index() {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
@@ -77,5 +76,7 @@ namespace React.Controllers {
       await _signInManager.SignOutAsync();
       return RedirectToAction("Index");
     }
+    
+
   }
 }
