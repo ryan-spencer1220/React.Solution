@@ -1,13 +1,10 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
-using React.Models;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using React.Models;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace React.Controllers
 {
@@ -25,69 +22,8 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       ViewBag.IsComplete = fundamentalsOne.Lesson1Complete;
-      return View();
-    }
-
-    public async Task<ActionResult> Lesson2()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson2Complete;
-      return View();
-    }
-
-    public async Task<ActionResult> Lesson3()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson3Complete;
-      return View();
-    }
-
-    public async Task<ActionResult> Lesson4()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson4Complete;
-      return View();
-    }
-
-    public async Task<ActionResult> Lesson5()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson5Complete;
-      return View();
-    }
-
-    public async Task<ActionResult> Lesson6()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson6Complete;
-      return View();
-    }
-
-    public async Task<ActionResult> Lesson7()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.IsComplete = fundamentalsOne.Lesson7Complete;
       return View();
     }
 
@@ -96,18 +32,27 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       if (fundamentalsOne.Lesson1Complete == true)
       {
         fundamentalsOne.Lesson1Complete = false;
-      } else if (fundamentalsOne.Lesson1Complete == false)
+      } 
+      else
       {
-      fundamentalsOne.Lesson1Complete = true;
+        fundamentalsOne.Lesson1Complete = true;
       }
       _db.Entry(fundamentalsOne).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction();
+    }
+
+    public async Task<ActionResult> Lesson2()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.IsComplete = fundamentalsOne.Lesson2Complete;
+      return View();
     }
 
     [HttpPost, ActionName("Lesson2")]
@@ -115,18 +60,27 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       if (fundamentalsOne.Lesson2Complete == true)
       {
         fundamentalsOne.Lesson2Complete = false;
-      } else if (fundamentalsOne.Lesson2Complete == false)
+      } 
+      else
       {
-      fundamentalsOne.Lesson2Complete = true;
+        fundamentalsOne.Lesson2Complete = true;
       }
       _db.Entry(fundamentalsOne).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction();
+    }
+
+    public async Task<ActionResult> Lesson3()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.IsComplete = fundamentalsOne.Lesson3Complete;
+      return View();
     }
 
     [HttpPost, ActionName("Lesson3")]
@@ -134,18 +88,27 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       if (fundamentalsOne.Lesson3Complete == true)
       {
         fundamentalsOne.Lesson3Complete = false;
-      } else if (fundamentalsOne.Lesson3Complete == false)
+      } 
+      else
       {
-      fundamentalsOne.Lesson3Complete = true;
+        fundamentalsOne.Lesson3Complete = true;
       }
       _db.Entry(fundamentalsOne).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction();
+    }
+
+    public async Task<ActionResult> Lesson4()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.IsComplete = fundamentalsOne.Lesson4Complete;
+      return View();
     }
 
     [HttpPost, ActionName("Lesson4")]
@@ -153,18 +116,27 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       if (fundamentalsOne.Lesson4Complete == true)
       {
         fundamentalsOne.Lesson4Complete = false;
-      } else if (fundamentalsOne.Lesson4Complete == false)
+      } 
+      else
       {
-      fundamentalsOne.Lesson4Complete = true;
+        fundamentalsOne.Lesson4Complete = true;
       }
       _db.Entry(fundamentalsOne).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction();
+    }
+
+    public async Task<ActionResult> Lesson5()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.IsComplete = fundamentalsOne.Lesson5Complete;
+      return View();
     }
 
     [HttpPost, ActionName("Lesson5")]
@@ -172,18 +144,27 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       if (fundamentalsOne.Lesson5Complete == true)
       {
         fundamentalsOne.Lesson5Complete = false;
-      } else if (fundamentalsOne.Lesson5Complete == false)
+      } 
+      else
       {
-      fundamentalsOne.Lesson5Complete = true;
+        fundamentalsOne.Lesson5Complete = true;
       }
       _db.Entry(fundamentalsOne).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction();
+    }
+
+    public async Task<ActionResult> Lesson6()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      ViewBag.IsComplete = fundamentalsOne.Lesson6Complete;
+      return View();
     }
 
     [HttpPost, ActionName("Lesson6")]
@@ -191,33 +172,14 @@ namespace React.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-
       FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
       if (fundamentalsOne.Lesson6Complete == true)
       {
         fundamentalsOne.Lesson6Complete = false;
-      } else if (fundamentalsOne.Lesson6Complete == false)
+      } 
+      else
       {
-      fundamentalsOne.Lesson6Complete = true;
-      }
-      _db.Entry(fundamentalsOne).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction();
-    }
-
-    [HttpPost, ActionName("Lesson7")]
-    public async Task<ActionResult> LessonSeven()
-    {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-
-      FundamentalsOne fundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      if (fundamentalsOne.Lesson7Complete == true)
-      {
-        fundamentalsOne.Lesson7Complete = false;
-      } else if (fundamentalsOne.Lesson7Complete == false)
-      {
-      fundamentalsOne.Lesson7Complete = true;
+        fundamentalsOne.Lesson6Complete = true;
       }
       _db.Entry(fundamentalsOne).State = EntityState.Modified;
       _db.SaveChanges();

@@ -37,6 +37,7 @@ namespace React.Controllers {
       _db.Reduxes.Add(redux);
       _db.NoSQLs.Add(noSql);
       _db.Apis.Add(api);
+      _db.SaveChanges();
       user.AddIds(intro.IntroductionId, fundamentalsOne.FundamentalsOneId, fundamentalsTwo.FundamentalsTwoId, redux.ReduxId, noSql.NoSQLId, api.ApiId);
       _db.SaveChanges();
       IdentityResult result = await _userManager.CreateAsync(user, model.Password);

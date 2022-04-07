@@ -1,0 +1,71 @@
+<div class="text-center p-4">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+</div>
+
+<div class="text-center p-4">
+  <h2>React Fundamentals Part One</h2>
+  <p class="lead">Lesson 2: Props & Prop Types</p>
+</div>
+
+@if (ViewBag.IsComplete == false)
+{
+  @using (Html.BeginForm())
+  {
+    <div class="row justify-content-center">
+      <div class="text-center container-sm col-8 col-sm-6 rounded">
+        <div class="text center col-12">
+          @using (Html.BeginForm())
+          {
+            <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+          }
+        </div>
+      </div>
+    </div>
+  }
+} 
+else
+{
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+        @using (Html.BeginForm())
+        {
+          <input type="submit" value= "Completed" class = "bn632-hover bn22" />
+        }
+      </div>
+    </div>
+  </div>
+}
+
+<section class="text-content p-3 m-3">
+  <div class="container-md p-3 m-3">
+    <p class="lead">React components accept properties (known as props) passed down from a parent using JSX tags. Since React components are functions, these props are actually just a special kind of argument.</p>
+    <p class="lead">In a more complex application, we might find ourselves passing the wrong type of props data to a child component. It's best practice to assign strict data types to props with a special propTypes property. When we assign strict data types, we are simply stating that a variable (in this case, a property) must be of a certain type. If they aren't, our application will throw an error.</p>
+  </div>
+</section>
+
+<section class="video-content bg-light shadow-lg p-3 mb-5 rounded">
+  <div class="container-lg p-3 m-3">
+    <div class="text-center">
+      <h2>Props, Default Props & PropTypes</h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/qnyfvN4CIbo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="row justify-content-center my-5">
+  <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
+    <a href="/FundamentalsOne/Lesson1"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/FundamentalsOne/Lesson3"><button class="bn632-hover bn20">Next Lesson</button></a>
+  </div>
+</div>
+
+<div class="card m-3 shadow-lg p-5 mb-5 rounded">
+  <h3 class="text-center">Resources</h3>
+  <a class="text-center" href="https://css-tricks.com/props-and-proptypes-in-react/">Overview & Code Examples</a>
+  <a class="text-center" href="https://flaviocopes.com/react-state-vs-props/">Props Vs State</a>
+  <a class="text-center" href="https://www.w3schools.com/react/react_props.asp">Using Props</a>
+  <a class="text-center" href="https://blog.logrocket.com/validating-react-component-props-with-prop-types-ef14b29963fc/">Validating Props with PropTypes</a>
+</div>
