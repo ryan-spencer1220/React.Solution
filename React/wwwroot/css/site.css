@@ -100,10 +100,10 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-.links-container  {
+.links-container {
   width: 40%;
   margin: auto;
-  margin-left: 37%
+  margin-left: 37%;
 }
 
 ul ul {
@@ -194,4 +194,11 @@ ul ul {
     #2bb673
   );
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+
+#footer {
+  position: fixed;
+  bottom: 4rem;
+  width: 100%;
+  height: 12%;
 }
