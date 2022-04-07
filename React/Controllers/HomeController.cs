@@ -26,7 +26,7 @@ namespace React.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Overview");
+            return View();
         }
 
         public IActionResult Privacy()

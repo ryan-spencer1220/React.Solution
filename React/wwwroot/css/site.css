@@ -1,34 +1,4 @@
-﻿Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@jessb-epicodus 
-ryan-spencer1220
-/
-React.Solution
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-React.Solution/React/wwwroot/css/site.css
-@ryan-spencer1220
-ryan-spencer1220 Add styling to Redux lessons
-Latest commit 8ecc841 37 minutes ago
- History
- 6 contributors
-@ryan-spencer1220@alexadamovic@jcseeley@RileyShimp@jessb-epicodus@Cruduper
-158 lines (139 sloc)  3.13 KB
-   
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿@import url('https://fonts.googleapis.com/css2?family=Numans&family=Poiret+One&family=Secular+One&display=swap');
 
 a.navbar-brand {
   white-space: normal;
@@ -282,6 +252,90 @@ ul ul {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
+
+#main-title {
+  font-family: 'Poiret One';
+  font-size: 6rem;
+  color: #023e83;
+}
+
+#byline {
+  font-family: 'Numans';
+}
+
+#main-image {
+  border-radius: 50%;
+  animation: rotation 20s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+.snip1533 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  color: #9e9e9e;
+  display: inline-block;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  margin: 35px 10px 10px;
+  max-width: 310px;
+  min-width: 250px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border-top: 5px solid #3cc1ff;
+}
+
+.snip1533 figcaption {
+  padding: 13% 10% 12%;
+}
+
+.snip1533 figcaption:before {
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  color: #3cc1ff;
+  content: "\0022";
+  font-family: 'Secular One';
+  font-size: 40px;
+  font-style: normal;
+  left: 50%;
+  line-height: 60px;
+  position: absolute;
+  top: -30px;
+  width: 60px;
+}
+
+.snip1533 h3 {
+  color: #3c3c3c;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 10px 0 5px;
+}
+
+.snip1533 h4 {
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.snip1533 blockquote {
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 0 20px;
+=======
 .progress-text  {
   font-size:1.5em;
 }
