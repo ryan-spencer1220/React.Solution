@@ -1,5 +1,5 @@
 <div class="text-center p-4">
-  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="138" height="128">
 </div>
 
 <div class="text-center p-4">
@@ -9,20 +9,17 @@
 
 @if (ViewBag.IsComplete == false)
 {
-  @using (Html.BeginForm())
-  {
-    <div class="row justify-content-center">
-      <div class="text-center container-sm col-8 col-sm-6 rounded">
-        <div class="text center col-12">
-          @using (Html.BeginForm())
-          {
-            <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
-          }
-        </div>
+  <div class="row justify-content-center">
+    <div class="text-center container-sm col-8 col-sm-6 rounded">
+      <div class="text center col-12">
+        @using (Html.BeginForm())
+        {
+          <input type="submit" value= "Mark Complete" class = "bn632-hover bn20" />
+        }
       </div>
     </div>
-  }
-} 
+  </div>
+}
 else
 {
   <div class="row justify-content-center">

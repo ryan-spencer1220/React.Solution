@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Numans&family=Poiret+One&family=Secular+One&display=swap');
+﻿@import url("https://fonts.googleapis.com/css2?family=Numans&family=Poiret+One&family=Secular+One&display=swap");
 
 a.navbar-brand {
   white-space: normal;
@@ -70,17 +70,10 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-
-.links-container  {
+.links-container {
   width: 45%;
   margin: auto;
-  margin-left: 35%
-
-.links-container {
-  width: 40%;
-  margin: auto;
-  margin-left: 37%;
-
+  margin-left: 35%;
 }
 
 ul ul {
@@ -171,11 +164,7 @@ ul ul {
     #2bb673
   );
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-
 }
-
-}
-
 
 /****** STUFF ERIC ADDED [START] ******/
 .accbn632-hover {
@@ -252,15 +241,14 @@ ul ul {
   box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
 }
 
-
 #main-title {
-  font-family: 'Poiret One';
+  font-family: "Poiret One";
   font-size: 6rem;
   color: #023e83;
 }
 
 #byline {
-  font-family: 'Numans';
+  font-family: "Numans";
 }
 
 #main-image {
@@ -282,7 +270,7 @@ ul ul {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   color: #9e9e9e;
   display: inline-block;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
   margin: 35px 10px 10px;
   max-width: 310px;
@@ -307,7 +295,7 @@ ul ul {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   color: #3cc1ff;
   content: "\0022";
-  font-family: 'Secular One';
+  font-family: "Secular One";
   font-size: 40px;
   font-style: normal;
   left: 50%;
@@ -335,14 +323,82 @@ ul ul {
   font-style: italic;
   font-weight: 300;
   margin: 0 0 20px;
-=======
-.progress-text  {
-  font-size:1.5em;
+}
+
+.progress-text {
+  font-size: 1.5em;
 }
 
 #footer {
-  position: fixed;
+  position: absolute;
   bottom: 4rem;
   width: 100%;
-  height: 12%;
+  height: 2.5rem;
+  padding-top: 10%;
+}
+
+.footer-basic {
+  padding: 40px 0;
+  background-color: #ffffff;
+  color: #4b4c4d;
+}
+
+.footer-basic ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-basic li {
+  padding: 0 10px;
+}
+
+.footer-basic ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity: 1;
+}
+
+.footer-basic .social {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.footer-basic .social > a {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity: 0.9;
+}
+
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 0;
+}
+
+#content-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 7rem;
 }

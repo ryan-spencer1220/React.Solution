@@ -7,17 +7,8 @@
     <div class="text-center">
         <h2>User Details</h2>
         <p>Hello @User.Identity.Name!</p>
-        <p>@Html.Label("Username: ") @Html.DisplayFor( m =>  m.Email) </p>
         <p>@Html.Label("Name: ") @Html.DisplayFor( m =>  m.FirstName) @Html.DisplayFor( m =>  m.LastName)</p>
         <hr>
-        <h4>Certificates of Completion</h4>
-        @if (ViewBag.Introduction.ModuleComplete == true) {<p>React Introduction ✔️</p>} else @if (ViewBag.Introduction.ModuleComplete != true) {<p>React Introduction <em>Incomplete</em></p>} 
-        @if (ViewBag.FundamentalsOne.ModuleComplete == true) {<p>React Fundamentals 1 ✔️</p>} else @if (ViewBag.FundamentalsOne.ModuleComplete != true) {<p>React Fundamentals 1 <em>Incomplete</em></p>} 
-        @if (ViewBag.FundamentalsTwo.ModuleComplete == true) {<p>React Fundamentals 2 ✔️</p>} else @if (ViewBag.FundamentalsTwo.ModuleComplete != true) {<p>React Fundamentals 2 <em>Incomplete</em></p>} 
-        @if (ViewBag.Redux.ModuleComplete == true) {<p>Redux ✔️</p>} else @if (ViewBag.Redux.ModuleComplete != true) {<p>Redux <em>Incomplete</em></p>} 
-        @if (ViewBag.NoSQL.ModuleComplete == true) {<p>React NoSQL ✔️</p>} else @if (ViewBag.NoSQL.ModuleComplete != true) {<p>NoSQL <em>Incomplete</em></p>} 
-        @if (ViewBag.Api.ModuleComplete == true) {<p>API ✔️</p>} else @if (ViewBag.Api.ModuleComplete != true) {<p>API <em>Incomplete</em></p>} 
-        <br>
         @using (Html.BeginForm("LogOff", "Account"))
         {
             <input type="submit" value="Log Out" class="bn632-hover bn20" />

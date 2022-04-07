@@ -14,6 +14,6 @@ namespace React.Models
     public bool Lesson1Complete { get; set; }
     public bool Lesson2Complete { get; set; }
     public bool Lesson3Complete { get; set; }
-    public bool ModuleComplete { get; set; }
+    public bool Lesson4Complete { get; set; }
   }
 }

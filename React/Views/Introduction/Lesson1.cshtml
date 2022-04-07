@@ -1,5 +1,5 @@
 <div class="text-center p-4">
-  <img src="https://cdn.worldvectorlogo.com/logos/react-1.svg" width="138" height="128">
+  <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" width="138" height="128">
 </div>
 
 
@@ -8,7 +8,7 @@
   <p class="lead">What is React?</p>
 </div>
 
-@if (ViewBag.IsComplete == true)
+@if (ViewBag.IsComplete == false)
 {
   @using (Html.BeginForm())
   {
@@ -23,7 +23,8 @@
   </div>
 </div>
   }
-} else if (ViewBag.IsComplete == false)
+} 
+else if (ViewBag.IsComplete == true)
 {
 <div class="row justify-content-center">
   <div class="text-center container-sm col-8 col-sm-6 rounded">
@@ -61,7 +62,7 @@ Developed by Facebook, and released in 2013.</p>
       <h2>React in 100 Seconds</h2>
     </div>
     <div class="row justify-content-center my-5">
-        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=Tn6-PIqc4UM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/Tn6-PIqc4UM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -72,14 +73,14 @@ Developed by Facebook, and released in 2013.</p>
       <h2>React JS Explained</h2>
     </div>
     <div class="row justify-content-center my-5">
-        <iframe width="760" height="515" src="https://www.youtube.com/watch?v=s2skans2dP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="760" height="515" src="https://www.youtube.com/embed/s2skans2dP4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </section>
 
 <div class="row justify-content-center my-5">
   <div class="text-center container-lg p-3 m-3 col-8 col-sm-6 rounded">
-    <a href="/"><button class="bn632-hover bn20">Previous Lesson</button></a>
+    <a href="/Home/Overview"><button class="bn632-hover bn20">Dashboard</button></a>
     <a href="/Introduction/Lesson2"><button class="bn632-hover bn20">Next Lesson</button></a>
   </div>
 </div>

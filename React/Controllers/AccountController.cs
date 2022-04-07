@@ -24,12 +24,12 @@ namespace React.Controllers {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
 
-      ViewBag.Introduction = _db.Introductions.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.FundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.FundamentalsTwo = _db.FundamentalsTwos.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.Redux = _db.Reduxes.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.NoSQL = _db.NoSQLs.FirstOrDefault(a => a.UserId == userId );
-      ViewBag.Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
+      // ViewBag.Introduction = _db.Introductions.FirstOrDefault(a => a.UserId == userId );
+      // ViewBag.FundamentalsOne = _db.FundamentalsOnes.FirstOrDefault(a => a.UserId == userId );
+      // ViewBag.FundamentalsTwo = _db.FundamentalsTwos.FirstOrDefault(a => a.UserId == userId );
+      // ViewBag.Redux = _db.Reduxes.FirstOrDefault(a => a.UserId == userId );
+      // ViewBag.NoSQL = _db.NoSQLs.FirstOrDefault(a => a.UserId == userId );
+      // ViewBag.Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
       return View(currentUser);
     }
     [AllowAnonymous]
@@ -73,7 +73,7 @@ namespace React.Controllers {
     public async Task<ActionResult> Login(LoginViewModel model) {
       Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
       if (result.Succeeded) {
-        return RedirectToAction("Index");
+        return RedirectToAction("Overview", "Home");
       }
       else {
         return View();

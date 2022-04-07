@@ -52,37 +52,29 @@
         <div class="text-left links-container">
           <ul>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson1", "FundamentalsOne")
+              @Html.ActionLink("Planning & Building a Static Site", "Lesson1", "FundamentalsOne")
               @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson1Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson2", "FundamentalsOne")
+              @Html.ActionLink("Props & Prop Types", "Lesson2", "FundamentalsOne")
               @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson2Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson3", "FundamentalsOne")
+              @Html.ActionLink("Looping in JSX", "Lesson3", "FundamentalsOne")
               @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson3Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson4", "FundamentalsOne")
+              @Html.ActionLink("Styling your React App", "Lesson4", "FundamentalsOne")
               @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson4Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson5", "FundamentalsOne")
+              @Html.ActionLink("Adding Images", "Lesson5", "FundamentalsOne")
               @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson5Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
             <li>
-              @Html.ActionLink("[Topic Here]", "Lesson6", "FundamentalsOne")
+              @Html.ActionLink("Debugging with React Developer Tools", "Lesson6", "FundamentalsOne")
               @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson6Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
             </li>
-            <li>
-              @Html.ActionLink("[Topic Here]", "Lesson7", "FundamentalsOne")
-              @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson7Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li>
-            @* <li>
-              @Html.ActionLink("[Topic Here]", "Lesson8", "FundamentalsOne")
-              @if(ViewBag.FundamentalsOne != null && ViewBag.FundamentalsOne.Lesson8Complete == true){<span>✅</span> ViewBag.NumComplete++;} @{ViewBag.NumLessons++;}
-            </li> *@
           </ul>
         </div>
       </div>
@@ -268,6 +260,8 @@
     </div>
   </div>
 
+
+
 </div>
 </div>
 
@@ -279,36 +273,38 @@
   $("#course-progress").css("width", @ViewBag.Ratio+"%")
 </script>
 
-</div>
-</div>
-
-    <!-- Wrap In If Statement (Display if all modules have been completed) -->
-    <section class="bg-light">
-      <div class="container p-5 shadow-lg rounded">
-        <div class="text-center">
-          <h2>You've Completed All Six Modules!</h2>
-          <p>Click the button below to view your certificate of completion</p>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-            <button class="bn632-hover bn20" data-bs-toggle="modal" data-bs-target="#reg-modal">
-              View Certificate
-            </button>
-          </div>
-        </div>
+@if (@ViewBag.NumLessons == @ViewBag.NumComplete)
+{    
+  <section class="bg-light">
+    <div class="container p-5 shadow-lg rounded">
+      <div class="text-center">
+        <h2>You've Completed All Six Modules!</h2>
+        <p>Click the button below to view your certificate of completion</p>
       </div>
-    </section>
-
-    <div class="modal fade bd-example-modal-lg" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div style="position: absolute; width: 100%; height: 100%; padding-top: 38.5%;
-          padding-bottom: 45%; overflow: hidden; will-change: transform;">
-            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAE9JDoR05w&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-            </iframe>
-          </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <button class="bn632-hover bn20" data-bs-toggle="modal" data-bs-target="#reg-modal">
+            View Certificate
+          </button>
         </div>
       </div>
     </div>
-    <!-- End if statement -->
+  </section>
+
+  <div class="modal fade bd-example-modal-lg" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div style="position: absolute; width: 100%; height: 100%; padding-top: 38.5%;
+        padding-bottom: 45%; overflow: hidden; will-change: transform;">
+          <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAE9JDoR05w&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+
+
+
 
