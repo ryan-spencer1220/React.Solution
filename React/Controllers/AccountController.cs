@@ -1,12 +1,14 @@
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
-using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using React.Models;
 using React.ViewModels;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace React.Controllers {
+  [Authorize]
   public class AccountController : Controller {
     private readonly ReactContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
@@ -16,6 +18,8 @@ namespace React.Controllers {
       _signInManager = signInManager;
       _db = db;
     }
+
+    [Authorize]
     public async Task<ActionResult> Index() {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
@@ -28,9 +32,11 @@ namespace React.Controllers {
       ViewBag.Api = _db.Apis.FirstOrDefault(a => a.UserId == userId );
       return View(currentUser);
     }
+    [AllowAnonymous]
     public IActionResult Register() {
       return View();
     }
+    [AllowAnonymous]
     [HttpPost]
     public async Task<ActionResult> Register (RegisterViewModel model) {
       var user = new ApplicationUser { UserName = model.Email, FirstName = model.FirstName, LastName = model.LastName };      
@@ -56,10 +62,12 @@ namespace React.Controllers {
         return View();
       }
     }
+
+    [AllowAnonymous]
     public ActionResult Login() {
       return View();
     }
-
+    [AllowAnonymous]
     [HttpPost]
     public async Task<ActionResult> Login(LoginViewModel model) {
       Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
@@ -74,9 +82,7 @@ namespace React.Controllers {
     [HttpPost]
     public async Task<ActionResult> LogOff() {
       await _signInManager.SignOutAsync();
-      return RedirectToAction("Index");
-    }
-    
-
+      return RedirectToAction("Login");
+    } 
   }
 }
